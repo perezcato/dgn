@@ -49,7 +49,7 @@ class ContactScreen extends React.Component {
   _openDrawer = () => {
     this._drawer && this._drawer._root.open()
 	}
-	
+
 	/** RENDER */
 	render() {
 		let { setting } = this.props;
@@ -106,7 +106,8 @@ class ContactScreen extends React.Component {
 			//set logo
 			if (setting.general) {
 				if (setting.general.app_logo) {
-					this._logo = setting.general.app_logo.sizes.thumbnail;
+					//this._logo = setting.general.app_logo.sizes.thumbnail;
+					this.logo = '';
 				}
 			}
 			// set info basic app
@@ -120,7 +121,7 @@ class ContactScreen extends React.Component {
 			this.setState({ _isReady: true });
 		}
 	}
-	/** 
+	/**
 	 * EVENT
 	*/
 	_onPressMenu = () => {

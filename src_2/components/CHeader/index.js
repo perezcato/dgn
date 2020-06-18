@@ -49,7 +49,7 @@ class CHeader extends React.Component {
     return (
       <Header hasSegment style={{
         backgroundColor: '#940a0a',
-        height: 110
+        height: Device.h_scale('10%')
       }} transparent iosBarStyle={'light-content'}
               androidStatusBarColor={'#940a0a'} translucent={false}>
         <Left>

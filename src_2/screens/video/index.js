@@ -5,11 +5,11 @@
  */
 /** LIBRARY */
 import React from 'react';
-import { View, Text, FlatList } from 'react-native';
-import { Drawer } from 'native-base';
-import { useNavigation, useRoute } from '@react-navigation/native';
+import {FlatList, Text, View} from 'react-native';
+import {Drawer} from 'native-base';
+import {useNavigation} from '@react-navigation/native';
 /** COMMON **/
-import { Device } from '~/config';
+import {Device} from '~/config';
 import Services from '~/services';
 import Helpers from '~/utils/helpers';
 /** COMPONENTS **/
@@ -82,6 +82,7 @@ class VideoScreen extends React.Component {
   _openDrawer = () => {
     this._drawer && this._drawer._root.open()
   }
+
   /** LIFE CYCLE */
   componentDidMount() {
     this._getDataFromServer();
@@ -89,39 +90,44 @@ class VideoScreen extends React.Component {
 
   /** RENDER */
   render() {
-    let { _loading } = this.state;
+    let {_loading} = this.state;
 
     return (
       <Drawer
         ref={ref => this._drawer = ref}
-        content={<CDrawer navigation={this.props.navigation} onClose={this._closeDrawer} />}
+        content={<CDrawer navigation={this.props.navigation} onClose={this._closeDrawer}/>}
         onClose={this._closeDrawer}
       >
         <View style={videoStyle.container}>
-          <CHeader title={'Video'} onMenu={this._openDrawer} onClose={this._closeDrawer} />
+          <CHeader title={'Video'} onMenu={this._openDrawer} onClose={this._closeDrawer}/>
 
           {_loading ?
-            <CLoading />
+            <CLoading/>
             :
             <CScrollView loadMore={this._loadMoreData}>
-              <View style={{ width: '100%', height: '100%', marginTop: 15 }}>
+              <View style={{width: '100%', height: '100%', marginTop: 15}}>
                 {this._dataVideos.length > 0 &&
-                  <FlatList
-                    data={this._dataVideos}
-                    renderItem={({ item, index }) => {
-                      return (
-                        <View style={{ width: '100%', height: (Device.width * 9 / 16 + 47), marginBottom: 15 }}>
-                          <Item data={item} flatImage={false} layoutCard={true} borderRadius stretchImage={false} />
-                        </View>
-                      )
-                    }}
-                    keyExtractor={(item, index) => index.toString()}
-                  />
+                <FlatList
+                  data={this._dataVideos}
+                  renderItem={({item, index}) => {
+                    return (
+                      <View style={{width: '100%', height: (Device.width * 9 / 16 + 47), marginBottom: 15}}>
+                        <Item data={item} flatImage={false} layoutCard={true} borderRadius stretchImage={false}/>
+                      </View>
+                    )
+                  }}
+                  keyExtractor={(item, index) => index.toString()}
+                />
                 }
                 {this._dataVideos.length === 0 &&
-                  <View style={{ height: '100%', width: '100%', alignItems: 'center', marginTop: Device.h_scale('20%') }}>
-                    <Text style={{ color: 'black', fontSize: Device.fS(14), fontFamily: Device.fontSlabRegular }}>{'No Data'}</Text>
-                  </View>
+                <View style={{height: '100%', width: '100%', alignItems: 'center', marginTop: Device.h_scale('20%')}}>
+                  <Text style={{
+                    color: 'black',
+                    fontSize: Device.fS(14),
+                    fontFamily: Device.fontSlabRegular,
+                    fontStyle: 'italic'
+                  }}>{'No Videos Available'}</Text>
+                </View>
                 }
               </View>
             </CScrollView>
@@ -135,5 +141,5 @@ class VideoScreen extends React.Component {
 export default function (props) {
   const navigation = useNavigation();
 
-  return <VideoScreen {...props} navigation={navigation} />;
+  return <VideoScreen {...props} navigation={navigation}/>;
 }

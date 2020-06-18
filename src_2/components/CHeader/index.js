@@ -47,7 +47,11 @@ class CHeader extends React.Component {
     let { isPlayingAudio, isBookmarked, isAtRoute, isAudio } = this.state;
 
     return (
-      <Header hasSegment style={{ backgroundColor: Colors.cloBMActive }} transparent iosBarStyle={'light-content'} androidStatusBarColor={Colors.cloBMActive} translucent={false}>
+      <Header hasSegment style={{
+        backgroundColor: '#940a0a',
+        height: 110
+      }} transparent iosBarStyle={'light-content'}
+              androidStatusBarColor={'#940a0a'} translucent={false}>
         <Left>
           {hasBtnBack &&
             <Icon name={hasBtnBack ? Config.ico_back : ''} size={25} color={'black'} type={'light'} onPress={this._onPressBack} />

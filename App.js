@@ -37,12 +37,9 @@ class App extends React.Component {
     return (
       <NavigationContainer>
         <Provider store={store}>
-
           <View style={commonStyles.container}>
-            <StatusBar barStyle={'dark-content'} backgroundColor={Colors.cloHeader} translucent={false} />
-
+            <StatusBar barStyle={'dark-content'} backgroundColor={'#940a0a'} translucent={false} />
             <RootNavigator />
-
             <CConnection />
           </View>
         </Provider>

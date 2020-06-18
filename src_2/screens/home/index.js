@@ -5,23 +5,20 @@
  */
 /** LIBRARY */
 import React from 'react';
-import { View, Text, TouchableOpacity, ScrollView } from 'react-native';
-import { TabView, TabBar } from 'react-native-tab-view';
-import Rate, { AndroidMarket } from 'react-native-rate';
-import _ from 'lodash';
-import { Drawer } from 'native-base';
+import {ScrollView, Text, TouchableOpacity, View} from 'react-native';
+import {TabView} from 'react-native-tab-view';
+import Rate, {AndroidMarket} from 'react-native-rate';
+import {Drawer} from 'native-base';
 /** COMMON */
-import { Config, Device, Languages } from '~/config';
+import {Config, Device, Languages} from '~/config';
 import Services from '~/services';
 import Helpers from '~/utils/helpers';
-import CLoading from '~/components/CLoading';
-import Horizontal from '~/components/CLayout/Horizontal';
 /** COMPONENTS */
 import CHeader from '~/components/CHeader';
 import NewsScreen from '~/screens/news';
 import CategoriesScreen from '~/screens/categories';
 import CRate from '~/components/CRate';
-import { Colors } from '~/utils/colors';
+import {Colors} from '~/utils/colors';
 import CDrawer from '~/components/CDrawer';
 /** STYLE */
 import styles from '~/screens/news/style';
@@ -49,7 +46,7 @@ class HomeScreen extends React.Component {
 
 
   _getDataFromServer = async () => {
-    let { routes } = this.state, i;
+    let {routes} = this.state, i;
     let respListCategories = await Services.Categories.getAllCategories();
     if (respListCategories && respListCategories.length > 0) {
       for (i = 0; i < respListCategories.length; i++) {
@@ -76,7 +73,7 @@ class HomeScreen extends React.Component {
   }
 
   _onIndexChange = index => {
-    this.setState({ index });
+    this.setState({index});
     if (this.arr.length >= index) {
       this.svRef.scrollTo({
         x: this.arr[index],
@@ -86,8 +83,8 @@ class HomeScreen extends React.Component {
     }
   }
 
-  _onPressTabItem = ({ route, preventDefault }) => {
-    this.setState({ index: route.index });
+  _onPressTabItem = ({route, preventDefault}) => {
+    this.setState({index: route.index});
   }
 
   _onPressMenu = () => {
@@ -95,7 +92,7 @@ class HomeScreen extends React.Component {
   }
 
   /** OTHER SCREENS */
-  _renderScene = ({ route, jumpTo }) => {
+  _renderScene = ({route, jumpTo}) => {
     switch (route.key) {
       case 'home':
         return (
@@ -117,23 +114,25 @@ class HomeScreen extends React.Component {
   };
 
   _renderTabbar = props => {
-    let { routes, index } = this.state;
+    let {routes, index} = this.state;
     return (
       // <View style={[styles.tabBar, { borderBottomColor: routes[index].tabColor }]}>
-      <View style={[styles.tabBar, { backgroundColor: Colors.cloBMActive }]}>
+      <View style={[styles.tabBar, {backgroundColor: '#940a0a'}]}>
         <ScrollView ref={ref => this.svRef = ref}
-          horizontal
-          showsHorizontalScrollIndicator={false}>
+                    horizontal
+                    showsHorizontalScrollIndicator={false}>
           {props.navigationState.routes.map((route, i) => {
             return (
               <TouchableOpacity key={i}
-                // style={[styles.tabItem, { backgroundColor: route.tabColor }]}
-                style={[styles.tabItem, { backgroundColor: route.color && route.color, marginHorizontal: 1  }, index === i && { borderBottomColor: 'black', borderBottomWidth: 3}]}
-                onPress={() => this.setState({ index: i })}
-                onLayout={event => {
-                  let layout = event.nativeEvent.layout;
-                  this.arr[i] = layout.x;
-                }}>
+                                style={[styles.tabItem, {
+                                  backgroundColor: route.color && route.color,
+                                  marginHorizontal: 1
+                                }, index === i && {borderBottomColor: '#fff', borderBottomWidth: 3}]}
+                                onPress={() => this.setState({index: i})}
+                                onLayout={event => {
+                                  let layout = event.nativeEvent.layout;
+                                  this.arr[i] = layout.x;
+                                }}>
                 {this._renderTextTabbar(i, route)}
               </TouchableOpacity>
             );
@@ -146,9 +145,9 @@ class HomeScreen extends React.Component {
   _renderTextTabbar = (index, route) => {
     return (
       <Text style={[styles.txtTabName,
-      this.state.index === index && { fontWeight: 'bold' },
-      { color: Colors.cloHeadline }]}
-        numberOfLines={1}>
+        this.state.index === index && {fontWeight: 'bold'},
+        {color: '#fff'}]}
+            numberOfLines={1}>
         {route.title}
       </Text>
     )
@@ -159,7 +158,7 @@ class HomeScreen extends React.Component {
   }
 
   _onToggleModalRating = () => {
-    this.setState({ _rating: !this.state._rating });
+    this.setState({_rating: !this.state._rating});
   }
 
   _onPressStartRating = () => {
@@ -212,6 +211,7 @@ class HomeScreen extends React.Component {
     console.log("open Drawer")
     this._drawer && this._drawer._root.open()
   }
+
   /** LIFE CYCLE */
   componentDidMount() {
     this._getDataFromServer();
@@ -220,33 +220,33 @@ class HomeScreen extends React.Component {
 
   /** RENDER */
   render() {
-    let { _loading, _rating } = this.state;
+    let {_loading, _rating} = this.state;
     return (
       <Drawer
         ref={ref => this._drawer = ref}
-        content={<CDrawer navigation={this.props.navigation} onClose={this._closeDrawer} />}
+        content={<CDrawer navigation={this.props.navigation} onClose={this._closeDrawer}/>}
         onClose={this._closeDrawer}
       >
         <View style={styles.container}>
-          <CHeader title={Config.settingV2.general.app_name} onMenu={this._openDrawer} onClose={this._closeDrawer} />
+          <CHeader title={'Daily Guide Network'} onMenu={this._openDrawer} onClose={this._closeDrawer}/>
 
           <View style={styles.container}>
             {!_loading &&
-              <TabView
-                navigationState={this.state}
-                renderScene={this._renderScene}
-                renderTabBar={this._renderTabbar}
-                onIndexChange={this._onIndexChange}
-                initialLayout={{ width: Device.width }}
-                lazy={true}
-                renderLazyPlaceholder={this._renderLazyPlaceholder}
-                tabBarPosition={'top'}
-                swipeEnabled
-              />
+            <TabView
+              navigationState={this.state}
+              renderScene={this._renderScene}
+              renderTabBar={this._renderTabbar}
+              onIndexChange={this._onIndexChange}
+              initialLayout={{width: Device.width}}
+              lazy={true}
+              renderLazyPlaceholder={this._renderLazyPlaceholder}
+              tabBarPosition={'top'}
+              swipeEnabled
+            />
             }
           </View>
 
-          {_loading && <View style={styles.con_loading} />}
+          {_loading && <View style={styles.con_loading}/>}
 
           <CRate
             visible={_rating}

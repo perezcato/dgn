@@ -47,8 +47,7 @@ class CategoriesScreen extends React.Component {
 		this._page = 1;
 		this._categorySetting = Config.settingV2.blog;
 		this._ads = Config.settingV2.ads;
-		this.category_style = this._categorySetting.blog_layout !== "" ?
-			this._categorySetting.blog_layout : Config.layout.left_thumb;
+		this.category_style = Config.layout.left_thumb;
 		this.category_show_title = this._categorySetting.blog_show_title;
 		this.category_show_excerpt = this._categorySetting.blog_show_excerpt;
 		this.adBefore = this._ads.is_show_blog_ads_header;

@@ -1,5 +1,5 @@
 export const Colors = {
-  cloBMActive: '#FFF726',
+  cloBMActive: '#940a0a',
   cloBackgroundOfApp: 'white',
   cloText: '#191919',
   cloSearchPlaceholder: 'rgba(0,0,0, 0.7)',
@@ -13,7 +13,7 @@ export const Colors = {
   cloImage: '#f2f2f2',
 
   /* HEADER */
-  cloHeader: '#FFF726',
+  cloHeader: '#940a0a',
 
   /* TIME */
   cloDescription: 'rgba(0,0,0, 0.9)',
@@ -34,7 +34,7 @@ export const Colors = {
   cloDownloadBackground: '#ffffff',
 
   /* SIDEMENU */
-  cloIconSideMenu: '#02213E',
+  cloIconSideMenu: '#940a0a',
 
   /* NAVIGATION */
   TRANSPARENT: 'transparent',

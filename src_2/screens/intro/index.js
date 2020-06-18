@@ -56,11 +56,6 @@ class IntroScreen extends React.Component {
         source={Config.img_bg}
         resizeMode={'cover'}
       >
-        <Image
-          style={{ width: 130, height: 130 }}
-          source={Config.img_logo}
-          resizeMode={'contain'}
-        />
       </ImageBackground>
     )
   }

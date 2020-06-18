@@ -19,7 +19,7 @@ export default homeStyle = {
   con_card_left_right_item: { width: '100%', marginLeft: Config.layout_offset.left, borderWidth: 0, borderLeftColor: 'black', borderLeftWidth: 3 },
   tabBar: { height: Device.w_scale('10%'), justifyContent: 'center', flexDirection: 'row' },
   tabItem: { justifyContent: 'center', alignItems: 'center', paddingHorizontal: 20, paddingVertical: 10, borderTopLeftRadius: 5, borderTopRightRadius: 5 },
-  txtTabName: { color: 'black', fontSize: Device.fS(15), fontFamily: Device.fontSlabRegular },
+  txtTabName: { color: 'black', fontSize: Device.fS(9), fontFamily: Device.fontSlabRegular },
   txt_title: { marginLeft: 10, fontSize: Device.fS(15), fontFamily: Device.fontSlabBold, color: 'black' },
   img_side_swipe_item: { height: '100%', width: '100%' },
   txt_side_swipe_item_title: { width: Device.width, color: 'white', fontSize: Device.fS(19), fontFamily: Device.fontSlabBold },

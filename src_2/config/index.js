@@ -121,7 +121,7 @@ export const Config = {
 
   /** INIT IMAGE */
   img_broken: require('../../assets/images/image_failed.png'),
-  img_bg: require('../../assets/images/bg.png'),
+  img_bg: require('../../assets/images/dgn.png'),
   img_logo: require('../../assets/icon.png'),
   img_food: require('../../assets/images/food.jpg'),
   img_travel: require('../../assets/images/travel.jpg'),

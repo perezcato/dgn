@@ -15,5 +15,9 @@ export default headerStyle = {
   container_center_header: { height: '100%', width: '70%', alignItems: 'center', justifyContent: 'center' },
   container_iconright_header: { width: Device.h_scale('7%'), height: '100%', alignItems: 'center', justifyContent: 'center', position: 'absolute', right: 0, zIndex: 10 },
 
-  txt_title: { color: 'black', fontSize: Device.fS(17), fontFamily: Device.fontSlabBold }
+  txt_title: {
+    color: 'white',
+    fontSize: Device.fS(14),
+    fontFamily: Device.fontSlabBold,
+  }
 }

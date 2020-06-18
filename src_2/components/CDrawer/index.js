@@ -1,26 +1,26 @@
 /**
- ** Name: 
- ** Author: 
- ** CreateAt: 
- ** Description: 
-**/
+ ** Name:
+ ** Author:
+ ** CreateAt:
+ ** Description:
+ **/
 /** LIBRARY */
 import React from 'react';
-import { ScrollView, Text, View, TouchableOpacity, Image, FlatList, ClippingRectangle } from 'react-native';
+import {FlatList, Image, ScrollView, Text, TouchableOpacity, View} from 'react-native';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux'
-import { useNavigation, CommonActions } from '@react-navigation/native';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux'
+import {useNavigation} from '@react-navigation/native';
 import Icon from 'react-native-fontawesome-pro';
 /** COMMON */
-import { Device, String, Config, Languages } from '~/config';
+import {Config, Device, Languages, String} from '~/config';
 /** STYLES */
 import sideMenuStyle from './style';
 /** API */
 import Services from '../../services'
 /** REDUX ACTIONS */
 import * as sideMenuActions from '../../redux/actions/side_menu';
-import { Colors } from '~/utils/colors';
+import {Colors} from '~/utils/colors';
 
 class CDrawer extends React.Component {
   constructor(props) {
@@ -76,6 +76,7 @@ class CDrawer extends React.Component {
       DEMO: Languages[Config.lang].DEMO
     };
   }
+
   /** FUNCTIONS */
   _getCategories = async () => {
     let resp = await Services.Categories.getAllCategories()
@@ -137,23 +138,25 @@ class CDrawer extends React.Component {
 
   _renderFooter = () => {
     return (
-      <View style={{ flexDirection: 'row' }}>
+      <View style={{flexDirection: 'row'}}>
         {this._logoPosition == 0 ?
           <Image
             style={sideMenuStyle.img_icon}
-            source={this._logo ? { uri: this._logo } : Config.ico_logo_default}
+            source={this._logo ? {uri: this._logo} : Config.ico_logo_default}
             resizeMode={'contain'}
           />
           : null
         }
-        <View style={{ marginLeft: 25 }}>
-          <Text style={[sideMenuStyle.navItemFooter, { color: Colors.cloBody }]}>{(this.general && this.general.app_name) ? this.general.app_name : ''}</Text>
-          <Text style={[sideMenuStyle.navItemFooter, { color: Colors.cloBody }]}>{'Version'} {(this.general && this.general.app_version) ? this.general.app_version : ''}</Text>
+        <View style={{marginLeft: 25}}>
+          <Text
+            style={[sideMenuStyle.navItemFooter, {color: Colors.cloBody}]}>{(this.general && this.general.app_name) ? this.general.app_name : ''}</Text>
+          <Text
+            style={[sideMenuStyle.navItemFooter, {color: Colors.cloBody}]}>{'Version'} {(this.general && this.general.app_version) ? this.general.app_version : ''}</Text>
         </View>
         {this._logoPosition == 1 ?
           <Image
             style={sideMenuStyle.img_icon}
-            source={this._logo ? { uri: this._logo } : Config.ico_logo_default}
+            source={this._logo ? {uri: this._logo} : Config.ico_logo_default}
             resizeMode={'contain'}
           />
           : null
@@ -180,73 +183,81 @@ class CDrawer extends React.Component {
       }
 
       //ready to render
-      this.setState({ _loading: false });
+      this.setState({_loading: false});
     }
   }
+
   /** RENDER */
   render() {
     return (
       <View style={sideMenuStyle.container}>
-        <TouchableOpacity style={[sideMenuStyle.contentTop, { backgroundColor: Colors.cloBMActive }]}
-          onPress={() => this._navigateToCategory('search', 'Search', false)}>
-          <View style={{ width: 20, justifyContent: 'center', alignItems: 'center', marginHorizontal: Config.layout_offset.left }}>
-            <Icon name={'search'} size={20} color={Colors.cloBody} type={'light'} />
+        <TouchableOpacity style={[sideMenuStyle.contentTop, {backgroundColor: '#940a0a'}]}
+                          onPress={() => this._navigateToCategory('search', 'Search', false)}>
+          <View style={{
+            width: 20,
+            justifyContent: 'center',
+            alignItems: 'center',
+            marginHorizontal: 20
+          }}>
+            <Icon name={'search'} size={17} color={'#fff'} type={'light'}/>
           </View>
-          <View style={{ width: '85%', justifyContent: 'center' }}>
-            <Text style={{ fontSize: Device.fS(17), fontFamily: Device.fontSlabBold }}>{this._init.SEARCH}</Text>
+          <View style={{width: '85%', justifyContent: 'center'}}>
+            <Text style={{fontSize: Device.fS(13), fontFamily: Device.fontSlabRegular,color: '#fff'}}>{this._init.SEARCH}</Text>
           </View>
         </TouchableOpacity>
 
         <ScrollView>
-          {this.general.menu_categories.post &&
+          {/*{this.general.menu_categories.post &&*/}
+          {/*<View>*/}
+          {/*  <View style={sideMenuStyle.container_sectionHeadingStyle}>*/}
+          {/*    <Text style={[sideMenuStyle.sectionHeadingStyle, {*/}
+          {/*      marginLeft: Config.layout_offset.left,*/}
+          {/*      color: Colors.cloHeadline*/}
+          {/*    },]}>*/}
+          {/*      {String.txtDrawerSection_2.toUpperCase()}*/}
+          {/*    </Text>*/}
+          {/*  </View>*/}
+          {/*  {this._categories.length > 0 &&*/}
+          {/*  <View>*/}
+          {/*    <FlatList*/}
+          {/*      data={this._categories}*/}
+          {/*      renderItem={({item, index}) => {*/}
+          {/*        return (*/}
+          {/*          <TouchableOpacity*/}
+          {/*            key={index}*/}
+          {/*            style={sideMenuStyle.container_navItemStyle}*/}
+          {/*            onPress={() => this._navigateToCategory(item.id, item.name, true)}*/}
+          {/*          >*/}
+          {/*            <Icon*/}
+          {/*              containerStyle={[sideMenuStyle.container_iconnav, {paddingHorizontal: Config.layout_offset.left}]}*/}
+          {/*              name={item.acf ? item.acf.class_name : 'newspaper'}*/}
+          {/*              size={20} color={Colors.cloBody} type={'light'}/>*/}
+          {/*            <Text style={[sideMenuStyle.navItemStyle, {color: Colors.cloBody}]}>*/}
+          {/*              {item.name}*/}
+          {/*            </Text>*/}
+          {/*          </TouchableOpacity>*/}
+          {/*        )*/}
+          {/*      }}*/}
+          {/*      keyExtractor={(item, index) => index.toString()}*/}
+          {/*    />*/}
+          {/*  </View>*/}
+          {/*  }*/}
+          {/*</View>*/}
+          {/*}*/}
           <View>
-            <View style={sideMenuStyle.container_sectionHeadingStyle}>
-              <Text style={[sideMenuStyle.sectionHeadingStyle, { marginLeft: Config.layout_offset.left, color: Colors.cloHeadline },]}>
-                {String.txtDrawerSection_2.toUpperCase()}
-              </Text>
-            </View>
-            {this._categories.length > 0 &&
-              <View >
-                <FlatList
-                  data={this._categories}
-                  renderItem={({ item, index }) => {
-                    return (
-                      <TouchableOpacity
-                        key={index}
-                        style={sideMenuStyle.container_navItemStyle}
-                        onPress={() => this._navigateToCategory(item.id, item.name, true)}
-                      >
-                        <Icon containerStyle={[sideMenuStyle.container_iconnav, { paddingHorizontal: Config.layout_offset.left }]} name={item.acf ? item.acf.class_name : 'newspaper'}
-                          size={20} color={Colors.cloBody} type={'light'} />
-                        <Text style={[sideMenuStyle.navItemStyle, { color: Colors.cloBody }]} >
-                          {item.name}
-                        </Text>
-                      </TouchableOpacity>
-                    )
-                  }}
-                  keyExtractor={(item, index) => index.toString()}
-                />
-              </View>
-            }
-          </View>
-          }
-          <View>
-            <View style={sideMenuStyle.container_sectionHeadingStyle}>
-              <Text style={[sideMenuStyle.sectionHeadingStyle, { marginLeft: Config.layout_offset.left, color: Colors.cloHeadline }]}>
-                {String.txtDrawerSection_1.toUpperCase()}
-              </Text>
-            </View>
-            <View >
+            <View>
               <FlatList
                 data={this.itemDrawer.topSections}
-                renderItem={({ item, index }) => {
+                renderItem={({item, index}) => {
                   return (
                     <TouchableOpacity
                       style={sideMenuStyle.container_navItemStyle}
                       onPress={() => this._navigateToCategory(item.id, item.name, false)}
                     >
-                      <Icon containerStyle={[sideMenuStyle.container_iconnav, { paddingHorizontal: Config.layout_offset.left }]} name={item.iconName} size={20} color={Colors.cloBody} />
-                      <Text style={[sideMenuStyle.navItemStyle, { color: Colors.cloBody }]} >
+                      <Icon
+                        containerStyle={[sideMenuStyle.container_iconnav, {paddingHorizontal: 22}]}
+                        name={item.iconName} size={15} color={'rgba(28,28,28,0.80)'}/>
+                      <Text style={[sideMenuStyle.navItemStyle, {color: 'rgba(28,28,28,0.80)'}]}>
                         {item.name}
                       </Text>
                     </TouchableOpacity>
@@ -257,52 +268,41 @@ class CDrawer extends React.Component {
             </View>
           </View>
           <View>
-            <View style={sideMenuStyle.container_sectionHeadingStyle}>
-              <Text style={[sideMenuStyle.sectionHeadingStyle, { marginLeft: Config.layout_offset.left, color: Colors.cloHeadline }]}>
-                {String.txtDrawerSection_3.toUpperCase()}
-              </Text>
-            </View>
-            <View >
-              <TouchableOpacity style={sideMenuStyle.container_navItemStyle} onPress={() => this._navigateToPage('contact', this._init.CONTACT_US)}>
-                <Icon containerStyle={[sideMenuStyle.container_iconnav, { paddingHorizontal: Config.layout_offset.left }]} name={'phone'} size={20} color={Colors.cloBody} type={'light'} />
-                <Text style={[sideMenuStyle.navItemStyle, { color: Colors.cloBody }]} >
+            <View>
+              <TouchableOpacity style={sideMenuStyle.container_navItemStyle}
+                                onPress={() => this._navigateToPage('contact', this._init.CONTACT_US)}>
+                <Icon containerStyle={[sideMenuStyle.container_iconnav, {paddingHorizontal: 22}]}
+                      name={'phone'} size={15} color={'rgba(28,28,28,0.80)'} type={'light'}/>
+                <Text style={[sideMenuStyle.navItemStyle, {color: 'rgba(28,28,28,0.80)'}]}>
                   {this._init.CONTACT_US}
                 </Text>
               </TouchableOpacity>
 
-              <TouchableOpacity style={sideMenuStyle.container_navItemStyle} onPress={() => this._navigateToPage(this.general.privacy_page ? this.general.privacy_page : -1, this._init.POLICY)}>
-                <Icon containerStyle={[sideMenuStyle.container_iconnav, { paddingHorizontal: Config.layout_offset.left }]} name={'user-lock'} size={20} color={Colors.cloBody} type={'light'} />
-                <Text style={[sideMenuStyle.navItemStyle, { color: Colors.cloBody }]} >
+              <TouchableOpacity style={sideMenuStyle.container_navItemStyle}
+                                onPress={() => this._navigateToPage(this.general.privacy_page ? this.general.privacy_page : -1, this._init.POLICY)}>
+                <Icon containerStyle={[sideMenuStyle.container_iconnav, {paddingHorizontal: 22}]}
+                      name={'user-lock'} size={15} color={'rgba(28,28,28,0.80)'} type={'light'}/>
+                <Text style={[sideMenuStyle.navItemStyle, {color: 'rgba(28,28,28,0.80)'}]}>
                   {this._init.POLICY}
                 </Text>
               </TouchableOpacity>
 
-              <TouchableOpacity style={sideMenuStyle.container_navItemStyle} onPress={() => this._navigateToPage(this.general.term_condition_page ? this.general.term_condition_page : -1, this._init.TERM_OF_USE)}>
-                <Icon containerStyle={[sideMenuStyle.container_iconnav, { paddingHorizontal: Config.layout_offset.left }]} name={'clipboard-list'} size={20} color={Colors.cloBody} type={'light'} />
-                <Text style={[sideMenuStyle.navItemStyle, { color: Colors.cloBody }]} >
+              <TouchableOpacity style={sideMenuStyle.container_navItemStyle}
+                                onPress={() => this._navigateToPage(this.general.term_condition_page ? this.general.term_condition_page : -1, this._init.TERM_OF_USE)}>
+                <Icon containerStyle={[sideMenuStyle.container_iconnav, {paddingHorizontal: 22}]}
+                      name={'clipboard-list'} size={15} color={'rgba(28,28,28,0.80)'} type={'light'}/>
+                <Text style={[sideMenuStyle.navItemStyle, {color: 'rgba(28,28,28,0.80)'}]}>
                   {this._init.TERM_OF_USE}
                 </Text>
               </TouchableOpacity>
-              { this.general.is_show_demo_app &&
-                <TouchableOpacity style={sideMenuStyle.container_navItemStyle} onPress={() => this._navigateToCategory('demo',Languages[Config.lang].DEMO, false)}>
-                  <Icon containerStyle={[sideMenuStyle.container_iconnav, { paddingHorizontal: Config.layout_offset.left }]} name={'sparkles'} size={20} color={Colors.cloBody} type={'light'} />
-                  <Text style={[sideMenuStyle.navItemStyle, { color: Colors.cloBody }]} >
-                    {this._init.DEMO}
-                  </Text>
-                </TouchableOpacity>
-              }
             </View>
           </View>
-
-          <View style={sideMenuStyle.container_footer}>
-            {this._renderFooter()}
-          </View>
-
         </ScrollView>
       </View>
     );
   }
 }
+
 CDrawer.propTypes = {
   navigation: PropTypes.object
 };
@@ -326,6 +326,6 @@ export default connect(
 )(
   function (props) {
     const navigation = useNavigation();
-    return <CDrawer {...props} navigation={navigation} />;
+    return <CDrawer {...props} navigation={navigation}/>;
   }
 );

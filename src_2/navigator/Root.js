@@ -1,9 +1,9 @@
 
 /**
- ** Name: 
- ** Author: 
- ** CreateAt: 
- ** Description: 
+ ** Name:
+ ** Author:
+ ** CreateAt:
+ ** Description:
 **/
 /* LIBRARY */
 import React from 'react';
@@ -14,6 +14,7 @@ import Icon from 'react-native-fontawesome-pro';
 /** COMPONENTS */
 import CText from '~/components/CText';
 /** SCREENS */
+import RadioScreen from "~/screens/radio";
 import HomeScreen from '~/screens/home'
 import VideoScreen from '~/screens/video';
 import IntroScreen from '~/screens/intro';
@@ -114,6 +115,7 @@ class RootMain extends React.Component {
           <StackMain.Screen name="linkDemo" component={LinkDemoScreen} />
           <StackMain.Screen name="comment" component={CommentScreen} />
           <StackMain.Screen name="appIntro" component={AppIntroScreen} />
+          <StackMain.Screen name="radio" component={RadioScreen} />
         </StackMain.Navigator>
       </Root>
     )

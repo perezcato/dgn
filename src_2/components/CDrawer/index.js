@@ -9,7 +9,8 @@ import React from 'react';
 import {FlatList, Image, ScrollView, Text, TouchableOpacity, View} from 'react-native';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux'
+import {bindActionCreators} from 'redux';
+import {Webview} from 'react-native-webview';
 import {useNavigation} from '@react-navigation/native';
 import Icon from 'react-native-fontawesome-pro';
 /** COMMON */
@@ -183,6 +184,7 @@ class CDrawer extends React.Component {
 
   /** RENDER */
   render() {
+    console.log('drawer state', this.props);
     return (
       <View style={sideMenuStyle.container}>
         <TouchableOpacity style={[sideMenuStyle.contentTop, {backgroundColor: '#940a0a'}]}
@@ -274,7 +276,9 @@ class CDrawer extends React.Component {
           <View>
             <View>
               <TouchableOpacity style={sideMenuStyle.container_navItemStyle}
-                                onPress={() => this._navigateToPage('contact', this._init.CONTACT_US)}>
+                                onPress={() => {
+                                  return this.props.navigation.navigate(('radio'));
+                                }}>
                 <Icon containerStyle={[sideMenuStyle.container_iconnav, {paddingHorizontal: 22}]}
                       name={'headphones'} size={15} color={'rgba(28,28,28,0.80)'} type={'light'}/>
                 <Text style={[sideMenuStyle.navItemStyle, {color: 'rgba(28,28,28,0.80)'}]}>

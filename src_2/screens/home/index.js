@@ -117,27 +117,8 @@ class HomeScreen extends React.Component {
     let {routes, index} = this.state;
     return (
       // <View style={[styles.tabBar, { borderBottomColor: routes[index].tabColor }]}>
-      <View style={[styles.tabBar, {backgroundColor: '#940a0a'}]}>
-        <ScrollView ref={ref => this.svRef = ref}
-                    horizontal
-                    showsHorizontalScrollIndicator={false}>
-          {props.navigationState.routes.map((route, i) => {
-            return (
-              <TouchableOpacity key={i}
-                                style={[styles.tabItem, {
-                                  backgroundColor: route.color && route.color,
-                                  marginHorizontal: 1
-                                }, index === i && {borderBottomColor: '#fff', borderBottomWidth: 3}]}
-                                onPress={() => this.setState({index: i})}
-                                onLayout={event => {
-                                  let layout = event.nativeEvent.layout;
-                                  this.arr[i] = layout.x;
-                                }}>
-                {this._renderTextTabbar(i, route)}
-              </TouchableOpacity>
-            );
-          })}
-        </ScrollView>
+      <View>
+
       </View>
     );
   };
@@ -229,7 +210,6 @@ class HomeScreen extends React.Component {
       >
         <View style={styles.container}>
           <CHeader title={'Daily Guide Network'} onMenu={this._openDrawer} onClose={this._closeDrawer}/>
-
           <View style={styles.container}>
             {!_loading &&
             <TabView
@@ -241,7 +221,7 @@ class HomeScreen extends React.Component {
               lazy={true}
               renderLazyPlaceholder={this._renderLazyPlaceholder}
               tabBarPosition={'top'}
-              swipeEnabled
+              swipeEnabled={false}
             />
             }
           </View>

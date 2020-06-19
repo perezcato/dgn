@@ -106,8 +106,8 @@ class ContactScreen extends React.Component {
 			//set logo
 			if (setting.general) {
 				if (setting.general.app_logo) {
-					//this._logo = setting.general.app_logo.sizes.thumbnail;
-					this.logo = '';
+					this._logo = setting.general.app_logo.sizes.thumbnail;
+					//this.logo = '';
 				}
 			}
 			// set info basic app

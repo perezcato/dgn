@@ -45,6 +45,8 @@ class CHeader extends React.Component {
   render() {
     let { title, hasBtnBack, hasTitle, onMenu, hasBtnClear, onClear } = this.props;
     let { isPlayingAudio, isBookmarked, isAtRoute, isAudio } = this.state;
+    console.log('state of the header', this.state);
+    console.log('props for the header',this.props);
 
     return (
       <Header hasSegment style={{
@@ -54,7 +56,7 @@ class CHeader extends React.Component {
               androidStatusBarColor={'#940a0a'} translucent={false}>
         <Left>
           {hasBtnBack &&
-            <Icon name={hasBtnBack ? Config.ico_back : ''} size={25} color={'black'} type={'light'} onPress={this._onPressBack} />
+            <Icon name={hasBtnBack ? Config.ico_back : ''} size={25} color={'#fff'} type={'light'} onPress={this._onPressBack} />
           }
           {!hasBtnBack && onMenu &&
             <TouchableOpacity onPress={onMenu}>
@@ -65,11 +67,14 @@ class CHeader extends React.Component {
 
         <Body style={commonStyles.column_align_center}>
           <Title>
-            {hasTitle &&
-              <Text style={headerStyle.txt_title} ellipsizeMode={"tail"} numberOfLines={1}>
-                {title ? title : ''}
-              </Text>
-            }
+            <Text style={headerStyle.txt_title} ellipsizeMode={"tail"} numberOfLines={1}>
+              {title ? title : 'Daily Guide Network'}
+            </Text>
+            {/*{hasTitle &&*/}
+            {/*  <Text style={headerStyle.txt_title} ellipsizeMode={"tail"} numberOfLines={1}>*/}
+            {/*    {title ? title : 'Daily Guide Network'}*/}
+            {/*  </Text>*/}
+            {/*}*/}
           </Title>
         </Body>
 
@@ -80,27 +85,21 @@ class CHeader extends React.Component {
               <Icon name={isPlayingAudio ? Config.ico_pause : Config.ico_play} size={25} color={'black'} type={'light'} />
             </TouchableOpacity>
           }
-          {isAtRoute === 'post' && this.post.single_share_buttons &&
+          {isAtRoute === 'post' &&
             <TouchableOpacity style={{ paddingRight: Device.h_scale('3%') }}
               onPress={this._onPressShare}>
-              <Image style={{ width: 25, height: 25 }} resizeMode={'contain'} source={ico_share} />
+              <Icon name={'share-alt'} size={25} color={'#fff'} type={'light'} />
             </TouchableOpacity>
           }
-          {isAtRoute === 'post' && this.post.single_show_bookmark &&
+          {isAtRoute === 'post' &&
             <TouchableOpacity
               onPress={this._onPressBookmark}>
-              <Image style={{ width: 25, height: 25 }} resizeMode={'contain'} source={isBookmarked ? ico_bookmark_selected : ico_bookmark} />
+              <Icon name={'bookmark'} size={25} color={'#fff'} type={'light'} />
             </TouchableOpacity>
           }
           {isAtRoute === 'bookmark' && hasBtnClear && onClear &&
             <TouchableOpacity>
               <Text>{Languages[Config.lang].CLEAR_ALL}</Text>
-            </TouchableOpacity>
-          }
-          {isAtRoute === 'demo' &&
-            <TouchableOpacity style={{ paddingRight: Device.h_scale('3%') }}
-              onPress={this._onPressLink}>
-              <Icon name={"link"} size={25} color={'black'} type={'light'} />
             </TouchableOpacity>
           }
         </Right>
@@ -189,6 +188,7 @@ class CHeader extends React.Component {
   }
 
   _onPressBookmark = () => {
+    alert('you just pressed bookmark');
     let pos = this._arrBookmark.indexOf(this.props.data.id);
     if (pos != -1) {
       //remove

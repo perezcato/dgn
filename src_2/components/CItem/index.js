@@ -1,13 +1,13 @@
 /** LIBRARY */
 import React from 'react';
-import { TouchableOpacity, Text, View } from 'react-native';
+import {Text, TouchableOpacity, View} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-fontawesome-pro';
-import { useNavigation } from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 /** COMMON **/
-import { Device, Config } from '~/config';
+import {Config, Device} from '~/config';
 import Helpers from '~/utils/helpers';
-import { Colors } from '~/utils/colors';
+import {Colors} from '~/utils/colors';
 /** COMPONENTS **/
 import CImage from '~/components/CImage';
 /** STYLES **/
@@ -34,7 +34,7 @@ class Item extends React.PureComponent {
       data, touchOpacity, thumbWidth, hasThumbnail, hasIcon, hasNoImages, hasAgo, hasTitle, borderRadius,
       flatImage, stretchImage, twoColumn, threeColumn, layoutLeft, layoutRight, layoutCard, hasExcerpt, heightImage
     } = this.props;
-    let { _init, _typeOfPost, _numOfImage, _featured_media } = this.state;
+    let {_init, _typeOfPost, _numOfImage, _featured_media} = this.state;
     let settings = {
       layout_content_width: Config.settingV2.general.layout_width ?
         Config.settingV2.general.layout_width :
@@ -45,95 +45,115 @@ class Item extends React.PureComponent {
 
     return (
       <TouchableOpacity
-        style={[styles.container, (layoutLeft || layoutRight ? { flexDirection: 'row' } : {})]}
+        style={[styles.container, (layoutLeft || layoutRight ? {flexDirection: 'row'} : {})]}
         onPress={this._onPressItem} activeOpacity={touchOpacity}
       >
         {hasThumbnail && (!layoutRight || layoutCard || layoutLeft) &&
-          <View style={[styles.linear_gardiant, { borderRadius: (flatImage ? 0 : 7) }, (layoutLeft || layoutRight ? { flex: thumbWidth } : {}), (layoutCard && (typeof (_featured_media) == 'number' && _featured_media == -1) && { marginHorizontal: 10 })]}>
-            {/** Image and loading */}
-            {(typeof (_featured_media) == 'number' && _featured_media == -1) ?
-              <CImage
-                style={[styles.img, { borderRadius: (flatImage ? 0 : 7) }]}
-                resizeMode={'cover'}
-                src={Config.img_broken}
-              />
-              :
-              this.renderImage(_featured_media, settings)
-            }
+        <View
+          style={[styles.linear_gardiant, {borderRadius: (flatImage ? 0 : 7)}, (layoutLeft || layoutRight ? {flex: thumbWidth} : {}), (layoutCard && (typeof (_featured_media) == 'number' && _featured_media == -1) && {marginHorizontal: 10})]}>
+          {/** Image and loading */}
+          {(typeof (_featured_media) == 'number' && _featured_media == -1) ?
+            <CImage
+              style={[styles.img, {borderRadius: (flatImage ? 0 : 7)}]}
+              resizeMode={'cover'}
+              src={Config.img_broken}
+            />
+            :
+            this.renderImage(_featured_media, settings)
+          }
 
-            {_typeOfPost != '' &&
-              !layoutCard ?
-              <LinearGradient style={[styles.container_icon, (!stretchImage ? { paddingVertical: 7, paddingHorizontal: Config.layout_offset.left + 7 } : {}), { marginTop: -50 }]}
-                colors={['transparent', 'rgba(0,0,0,0.4)', 'rgba(0,0,0,0.7)', 'rgba(0,0,0,.9)']}>
-                {hasIcon &&
-                  <Icon
-                    name={_typeOfPost == 'video' ? _init.iconVidName : _typeOfPost == 'image' ? _init.iconImgName : ''}
-                    size={Device.s * 20}
-                    color={'white'}
-                    type={'regular'}
-                  />
-                }
-                {hasNoImages &&
-                  <Text style={styles.txt_icon}>{_typeOfPost == 'image' ? '+' + _numOfImage : ''}</Text>
-                }
-              </LinearGradient>
-              :
-              <View style={[styles.container_icon, (!stretchImage ? { paddingVertical: 7, paddingHorizontal: Config.layout_offset.left + 7 } : {})]} />
-            }
-          </View>
+          {_typeOfPost != '' &&
+          !layoutCard ?
+            <LinearGradient style={[styles.container_icon, (!stretchImage ? {
+              paddingVertical: 7,
+              paddingHorizontal: Config.layout_offset.left + 7
+            } : {}), {marginTop: -50}]}
+                            colors={['transparent', 'rgba(0,0,0,0.4)', 'rgba(0,0,0,0.7)', 'rgba(0,0,0,.9)']}>
+              {hasIcon &&
+              <Icon
+                name={_typeOfPost == 'video' ? _init.iconVidName : _typeOfPost == 'image' ? _init.iconImgName : ''}
+                size={Device.s * 20}
+                color={'white'}
+                type={'regular'}
+              />
+              }
+              {hasNoImages &&
+              <Text style={styles.txt_icon}>{_typeOfPost == 'image' ? '+' + _numOfImage : ''}</Text>
+              }
+            </LinearGradient>
+            :
+            <View style={[styles.container_icon, (!stretchImage ? {
+              paddingVertical: 7,
+              paddingHorizontal: Config.layout_offset.left + 7
+            } : {})]}/>
+          }
+        </View>
         }
 
         {(!twoColumn && !layoutLeft && !layoutRight && (layoutCard || threeColumn)) ?
           <LinearGradient colors={['transparent', 'rgba(0,0,0,0.4)', 'rgba(0,0,0,0.7)', 'rgba(0,0,0,.9)']}
-            style={[
-              { flex: 1, position: 'absolute', bottom: 0, left: 0, right: 0, borderBottomLeftRadius: 7, borderBottomRightRadius: 7 },
-              ({ paddingLeft: layoutLeft ? Config.layout_offset.left : 10, paddingRight: layoutRight ? Config.layout_offset.left : 10 }),
-              ((layoutCard && !flatImage) ? { marginHorizontal: Config.layout_offset.left } : {}),
-              !borderRadius ? { borderBottomLeftRadius: 0, borderBottomRightRadius: 0 } : {},
-              { marginTop: -100 }
-            ]}>
-            {this._hasTitle &&
-              <Text style={[styles.txt_title, (layoutLeft || layoutRight ? { marginTop: 0 } : { })]}
-                numberOfLines={2} >{newTitle}</Text>
+                          style={[
+                            {
+                              flex: 1,
+                              position: 'absolute',
+                              bottom: 0,
+                              left: 0,
+                              right: 0,
+                              borderBottomLeftRadius: 7,
+                              borderBottomRightRadius: 7
+                            },
+                            ({
+                              paddingLeft: layoutLeft ? Config.layout_offset.left : 10,
+                              paddingRight: layoutRight ? Config.layout_offset.left : 10
+                            }),
+                            ((layoutCard && !flatImage) ? {marginHorizontal: Config.layout_offset.left} : {}),
+                            !borderRadius ? {borderBottomLeftRadius: 0, borderBottomRightRadius: 0} : {},
+                            {marginTop: -100}
+                          ]}>
+            {<Text style={[styles.txt_title, (layoutLeft || layoutRight ? {marginTop: 0} : {})]}
+                   numberOfLines={2}>{newTitle}</Text>
             }
             {this._hasExcerpt && newExcerpt !== '' &&
-              <Text numberOfLines={2} style={styles.txt_description}>{newExcerpt}</Text>
+            <Text numberOfLines={2} style={styles.txt_description}>{newExcerpt}</Text>
             }
-            {hasAgo &&
-              <Text style={styles.txt_time} numberOfLines={1}>{Helpers.getLastPeriod(data.time, 'fullday')}</Text>
+            {<Text style={styles.txt_time} numberOfLines={1}>{Helpers.getLastPeriod(data.time, 'fullday')}</Text>
             }
           </LinearGradient>
           :
           <View style={[
-            (layoutLeft || layoutRight ? { flex: 10 - thumbWidth } : {}),
-            ({ paddingLeft: layoutLeft ? Config.layout_offset.left : 0, paddingRight: layoutRight ? Config.layout_offset.left : 10 }),
-            (layoutCard ? { marginHorizontal: Config.layout_offset.left } : {}),
-            !borderRadius ? { borderBottomLeftRadius: 0, borderBottomRightRadius: 0 } : {}]}
+            (layoutLeft || layoutRight ? {flex: 10 - thumbWidth} : {}),
+            ({
+              paddingLeft: layoutLeft ? Config.layout_offset.left : 0,
+              paddingRight: layoutRight ? Config.layout_offset.left : 10
+            }),
+            (layoutCard ? {marginHorizontal: Config.layout_offset.left} : {}),
+            !borderRadius ? {borderBottomLeftRadius: 0, borderBottomRightRadius: 0} : {}]}
           >
-            {this._hasTitle &&
-              <Text style={[styles.txt_title, { color: 'black' }, (layoutLeft || layoutRight ? { marginTop: 0 } : { })]}
-                numberOfLines={2} >{newTitle}</Text>
-            }
-            {hasAgo &&
-              <Text style={[styles.txt_time, { color: 'black' }, layoutLeft || layoutRight && {paddingBottom: 20, marginTop: 5}]} numberOfLines={1}>{Helpers.getLastPeriod(data.time, 'fullday')}</Text>
-            }
-            {this._hasExcerpt && newExcerpt !== '' &&
-              <Text numberOfLines={2} style={[styles.txt_description, { color: 'black' }]}>{newExcerpt}</Text>
+            {<Text style={[styles.txt_title, {color: 'black'}, (layoutLeft || layoutRight ? {marginTop: 0} : {})]}
+                   numberOfLines={2}>{newTitle}</Text>
             }
 
+            {<Text numberOfLines={2} style={[styles.txt_description, {color: 'black'}]}>{newExcerpt}</Text>
+            }
+            {hasAgo &&
+            <Text style={[styles.txt_time, {color: 'black'}, layoutLeft || layoutRight && {
+              paddingBottom: 20,
+              marginTop: 10
+            }]} numberOfLines={1}>{Helpers.getLastPeriod(data.time, 'fullday')}</Text>
+            }
           </View>
         }
 
         {
           hasThumbnail && layoutRight && !layoutLeft &&
           <View
-            style={[styles.linear_gardiant, { borderRadius: (flatImage ? 0 : 7) }, (layoutLeft || layoutRight ? { flex: thumbWidth } : {})]}
+            style={[styles.linear_gardiant, {borderRadius: (flatImage ? 0 : 7)}, (layoutLeft || layoutRight ? {flex: thumbWidth} : {})]}
             colors={Colors.cloGdaPostItem}
           >
             {/** Image and loading */}
             {(typeof (_featured_media) == 'number' && _featured_media == -1) ?
               <CImage
-                style={[styles.img, { borderRadius: (flatImage ? 0 : 7) }]}
+                style={[styles.img, {borderRadius: (flatImage ? 0 : 7)}]}
                 resizeMode={'cover'}
                 src={Config.img_broken}
               />
@@ -141,38 +161,44 @@ class Item extends React.PureComponent {
               this.renderImage(_featured_media, settings)
             }
             {_typeOfPost != '' &&
-              !layoutCard ?
-              <LinearGradient style={[styles.container_icon, (!stretchImage ? { paddingVertical: 7, paddingHorizontal: Config.layout_offset.left + 7 } : {}), { marginTop: -50 }]}
-                colors={['transparent', 'rgba(0,0,0,0.4)', 'rgba(0,0,0,0.7)', 'rgba(0,0,0,.9)']}>
+            !layoutCard ?
+              <LinearGradient style={[styles.container_icon, (!stretchImage ? {
+                paddingVertical: 7,
+                paddingHorizontal: Config.layout_offset.left + 7
+              } : {}), {marginTop: -50}]}
+                              colors={['transparent', 'rgba(0,0,0,0.4)', 'rgba(0,0,0,0.7)', 'rgba(0,0,0,.9)']}>
                 {hasIcon &&
-                  <Icon
-                    name={_typeOfPost == 'video' ? _init.iconVidName : _typeOfPost == 'image' ? _init.iconImgName : ''}
-                    size={Device.s * 20}
-                    color={'white'}
-                    type={'regular'}
-                  />
+                <Icon
+                  name={_typeOfPost == 'video' ? _init.iconVidName : _typeOfPost == 'image' ? _init.iconImgName : ''}
+                  size={Device.s * 20}
+                  color={'white'}
+                  type={'regular'}
+                />
                 }
                 {hasNoImages &&
-                  <Text style={styles.txt_icon}>{_typeOfPost == 'image' ? '+' + _numOfImage : ''}</Text>
+                <Text style={styles.txt_icon}>{_typeOfPost == 'image' ? '+' + _numOfImage : ''}</Text>
                 }
               </LinearGradient>
               :
-              <View style={[styles.container_icon, (!stretchImage ? { paddingVertical: 7, paddingHorizontal: Config.layout_offset.left + 7 } : {})]} />
+              <View style={[styles.container_icon, (!stretchImage ? {
+                paddingVertical: 7,
+                paddingHorizontal: Config.layout_offset.left + 7
+              } : {})]}/>
             }
           </View>
         }
-      </TouchableOpacity >
+      </TouchableOpacity>
     )
   }
 
   renderImage = (_featured_media, settings) => {
-    let { hasThumbnail, flatImage, stretchImage, heightImage, widthImage } = this.props;
-    let { _typeOfPost } = this.state;
+    let {hasThumbnail, flatImage, stretchImage, heightImage, widthImage} = this.props;
+    let {_typeOfPost} = this.state;
 
     if (!_featured_media) {
       return (
         <CImage
-          style={[styles.img, { borderRadius: (flatImage ? 0 : 7) }]}
+          style={[styles.img, {borderRadius: (flatImage ? 0 : 7)}]}
           resizeMode={'cover'}
           src={Config.img_broken}
         />
@@ -182,54 +208,63 @@ class Item extends React.PureComponent {
     return (
       _typeOfPost === 'pdf' ?
         (_featured_media.pdf_size ?
-          <CImage
-            style={[styles.img, { borderRadius: (flatImage ? 0 : 7) }]}
-            resizeMode={'contain'}
-            src={{ uri: _featured_media.pdf_size.source_url }}
-          />
-          : null
+            <CImage
+              style={[styles.img, {borderRadius: (flatImage ? 0 : 7)}]}
+              resizeMode={'contain'}
+              src={{uri: _featured_media.pdf_size.source_url}}
+            />
+            : null
         )
         :
         (_featured_media.large ?
-          (hasThumbnail ?
-            <CImage
-              style={[styles.img, { borderRadius: (flatImage ? 0 : 7) },
-              (!stretchImage
-                ? { width: Device.w_scale(settings.layout_content_width + '%'), marginHorizontal: Config.layout_offset.left }
-                : {}
-              ), heightImage ? { height: heightImage } : {},
-              widthImage ? { width: widthImage } : {}]}
-              resizeMode={'cover'}
-              src={{ uri: _featured_media.large }}
-            />
-            : null
-          )
-          :
-          (_featured_media.source && hasThumbnail ?
-            <CImage
-              style={[styles.img, { borderRadius: (flatImage ? 0 : 7) },
-              (!stretchImage ? { width: Device.w_scale(settings.layout_content_width + '%'), marginHorizontal: Config.layout_offset.left } : {})
-              ]}
-              resizeMode={'contain'}
-              src={_featured_media.source}
-            />
+            (hasThumbnail ?
+                <CImage
+                  style={[styles.img, {borderRadius: (flatImage ? 0 : 7)},
+                    (!stretchImage
+                        ? {
+                          width: Device.w_scale(settings.layout_content_width + '%'),
+                          marginHorizontal: Config.layout_offset.left
+                        }
+                        : {}
+                    ), heightImage ? {height: heightImage} : {},
+                    widthImage ? {width: widthImage} : {}]}
+                  resizeMode={'cover'}
+                  src={{uri: _featured_media.large}}
+                />
+                : null
+            )
             :
-            <View style={[styles.img, { padding: 30, backgroundColor: Colors.cloImage },
-            (!stretchImage ? { width: Device.w_scale(settings.layout_content_width + '%'), marginHorizontal: Config.layout_offset.left } : {})
-            ]}>
-              <CImage
-                style={{ width: '100%', height: '100%' }}
-                resizeMode={'contain'}
-                src={Config.img_broken}
-              />
-            </View>
-          )
+            (_featured_media.source && hasThumbnail ?
+                <CImage
+                  style={[styles.img, {borderRadius: (flatImage ? 0 : 7)},
+                    (!stretchImage ? {
+                      width: Device.w_scale(settings.layout_content_width + '%'),
+                      marginHorizontal: Config.layout_offset.left
+                    } : {})
+                  ]}
+                  resizeMode={'contain'}
+                  src={_featured_media.source}
+                />
+                :
+                <View style={[styles.img, {padding: 30, backgroundColor: Colors.cloImage},
+                  (!stretchImage ? {
+                    width: Device.w_scale(settings.layout_content_width + '%'),
+                    marginHorizontal: Config.layout_offset.left
+                  } : {})
+                ]}>
+                  <CImage
+                    style={{width: '100%', height: '100%'}}
+                    resizeMode={'contain'}
+                    src={Config.img_broken}
+                  />
+                </View>
+            )
         )
     )
   }
   /* Life Cycle */
   componentDidMount = async () => {
-    let { data } = this.props;
+    let {data} = this.props;
     if (data && data.thumbnail) {
       this.setState({
         _featured_media: data.thumbnail.sizes
@@ -291,5 +326,5 @@ Item.defaultProps = {
 
 export default function (props) {
   const navigation = useNavigation();
-  return <Item {...props} navigation={navigation} />;
+  return <Item {...props} navigation={navigation}/>;
 }

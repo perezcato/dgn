@@ -201,6 +201,7 @@ class PostScreen extends React.Component {
   }
   /** RENDER */
   render() {
+    console.log('state is', this.state);
     let {
       _loading, _tags, _categories, _featuredImage, _isGallery, _isVideo, _isYoutube, _stringConvert,
       _author, _dataRelated, _dataPopular } = this.state;
@@ -230,11 +231,11 @@ class PostScreen extends React.Component {
                   />
                 }
 
-                {_featuredImage.media_details && this._settings.post_show_featured_image && !_isVideo &&
+                {_featuredImage && !_isVideo &&
                   <CImage
                     style={[{ width: '100%', height: Device.width * 9 / 16 + 47 }]}
                     resizeMode={'cover'}
-                    src={{ uri: _featuredImage.media_details.sizes.large ? _featuredImage.media_details.sizes.large.source_url : _featuredImage.media_details.sizes.full.source_url }}
+                    src={{ uri: _featuredImage ? _featuredImage : _featuredImage }}
                   />
                 }
                 {typeof _featuredImage === 'string' && this._settings.post_show_featured_image && !_isVideo &&
@@ -249,28 +250,29 @@ class PostScreen extends React.Component {
                 {/* TITLE POST */}
                 <View style={{ paddingHorizontal: Config.layout_offset.left, paddingVertical: 10 }}>
                   <Text style={[postStyle.txt_title, { color: this._settings.text_headline_color }]}>{newTitle}</Text>
-                  {(this._settings.post_show_date || this._settings.post_show_author) &&
-                    <View style={postStyle.p_timeAuthor}>
-                      <Text style={postStyle.txt_time_author} numberOfLines={1}>{Languages[Config.lang].DATE_CREATED + ': '}</Text>
-                      {this._settings.post_show_date &&
-                        <Text style={postStyle.txt_time_author} numberOfLines={1}>{Helpers.getLastPeriod(this._dataPost.time, 'fullday')}</Text>
-                      }
-                      {this._settings.post_show_author &&
-                        <Text style={[postStyle.txt_time_author, { fontFamily: Device.fontSlabBold }]}
+                  {<View style={postStyle.p_timeAuthor}>
+                    <Text style={postStyle.txt_time_author}
+                          numberOfLines={1}>{Languages[Config.lang].DATE_CREATED + ': '}</Text>
+                    {this._settings.post_show_date &&
+                    <Text style={postStyle.txt_time_author}
+                          numberOfLines={1}>{Helpers.getLastPeriod(this._dataPost.time, 'fullday')}</Text>
+                    }
+                    {this._settings.post_show_author &&
+                    <Text style={[postStyle.txt_time_author, {fontFamily: Device.fontSlabBold}]}
                           numberOfLines={1}
                           onPress={this._settings.post_author_link && this._onPressAuthor}>
-                          {' ' + Languages[Config.lang].BY + ' ' + _author.name}
-                        </Text>
-                      }
-                    </View>
+                      {' ' + Languages[Config.lang].BY + ' ' + _author.name}
+                    </Text>
+                    }
+                  </View>
                   }
-                  {this._settings.post_show_categories && _categories.length > 0 &&
+                  { _categories.length > 0 &&
                     <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>
                       <Text style={[postStyle.txt_time_author, { fontFamily: Device.fontSlabBold }]}>{Languages[Config.lang].CATEGORIES + ': '}</Text>
                       {_categories.map((category, index) => {
                         return (
                           <TouchableOpacity key={index} style={{}} onPress={() => this._navigateToScreenCategory(category.id, category.name)}>
-                            <Text style={[postStyle.txt_time_author, { fontFamily: Device.fontSlabBold, color: Colors.cloLink }]}>{category.name}  </Text>
+                            <Text style={[postStyle.txt_time_author, { fontFamily: Device.fontSlabBold, color: '#940a0a' }]}>{category.name}  </Text>
                           </TouchableOpacity>
                         )
                       })}
@@ -294,7 +296,7 @@ class PostScreen extends React.Component {
 
                 {/* VIDEO */}
                 {_isVideo && _isYoutube &&
-                  // VIDEO POST TYPE 
+                  // VIDEO POST TYPE
                   <View style={postStyle.video_box}>
                     <View style={{ width: '100%', height: '100%' }}>
                       <WebView
@@ -308,10 +310,17 @@ class PostScreen extends React.Component {
 
                 {/* STANDARD */}
                 {this._dataPost.orginData.content &&
-                  <View style={{ flex: 1, paddingHorizontal: Config.layout_offset.left, paddingVertical: 10 }}>
+                  <View style={{ flex: 1, paddingHorizontal: 15, paddingVertical: 15, textAlign: 'justify' }}>
                     <HTML
                       html={dataRender}
-                      tagsStyles={{ p: postStyle.txt_p_tag, h4: postStyle.txt_h4 }}
+                      tagsStyles={{ p: {
+                          fontSize: Device.fS(14),
+                          color: '#000',
+                          fontFamily: Device.fontSlabRegular,
+                          //color: Colors.cloBody,
+                          textAlign: 'justify',
+                          marginBottom: Device.fS(14)
+                        }, h4: postStyle.txt_h4 }}
                       imagesMaxWidth={Dimensions.get('window').width - Config.layout_offset.left * 2}
                       staticContentMaxWidth={Dimensions.get('window').width - Config.layout_offset.left * 2}
                       renderers={{
@@ -352,7 +361,7 @@ class PostScreen extends React.Component {
                 }
 
                 {/* RELATED POSTS */}
-                {this._settings.post_show_related && _dataRelated.length > 0 &&
+                {  _dataRelated.length > 0 &&
                   <View style={postStyle.relatedPosts}>
                     <FlatList contentContainerStyle={{ paddingHorizontal: Config.layout_offset.left }}
                       data={_dataRelated}
@@ -393,7 +402,6 @@ class PostScreen extends React.Component {
                       }
                     />
                   </View>
-
                 }
                 {/* <Button block style={[postStyle.con_btn, { backgroundColor: Colors.cloBMActive, margin: Config.layout_offset.left }]} onPress={this._onPressViewComment}  >
                   <CText style={postStyle.txt_btn} i18nKey={'COMMENT'} upperCase />

@@ -54,12 +54,6 @@ class CDrawer extends React.Component {
           navName: 'bookmark',
           iconName: 'bookmark'
         },
-        // {
-        //   id: 'demo',
-        //   name: Languages[Config.lang].DEMO,
-        //   navName: 'demo',
-        //   iconName: 'sparkles'
-        // },
       ]
     }
 
@@ -207,44 +201,15 @@ class CDrawer extends React.Component {
         </TouchableOpacity>
 
         <ScrollView>
-          {/*{this.general.menu_categories.post &&*/}
-          {/*<View>*/}
-          {/*  <View style={sideMenuStyle.container_sectionHeadingStyle}>*/}
-          {/*    <Text style={[sideMenuStyle.sectionHeadingStyle, {*/}
-          {/*      marginLeft: Config.layout_offset.left,*/}
-          {/*      color: Colors.cloHeadline*/}
-          {/*    },]}>*/}
-          {/*      {String.txtDrawerSection_2.toUpperCase()}*/}
-          {/*    </Text>*/}
-          {/*  </View>*/}
-          {/*  {this._categories.length > 0 &&*/}
-          {/*  <View>*/}
-          {/*    <FlatList*/}
-          {/*      data={this._categories}*/}
-          {/*      renderItem={({item, index}) => {*/}
-          {/*        return (*/}
-          {/*          <TouchableOpacity*/}
-          {/*            key={index}*/}
-          {/*            style={sideMenuStyle.container_navItemStyle}*/}
-          {/*            onPress={() => this._navigateToCategory(item.id, item.name, true)}*/}
-          {/*          >*/}
-          {/*            <Icon*/}
-          {/*              containerStyle={[sideMenuStyle.container_iconnav, {paddingHorizontal: Config.layout_offset.left}]}*/}
-          {/*              name={item.acf ? item.acf.class_name : 'newspaper'}*/}
-          {/*              size={20} color={Colors.cloBody} type={'light'}/>*/}
-          {/*            <Text style={[sideMenuStyle.navItemStyle, {color: Colors.cloBody}]}>*/}
-          {/*              {item.name}*/}
-          {/*            </Text>*/}
-          {/*          </TouchableOpacity>*/}
-          {/*        )*/}
-          {/*      }}*/}
-          {/*      keyExtractor={(item, index) => index.toString()}*/}
-          {/*    />*/}
-          {/*  </View>*/}
-          {/*  }*/}
-          {/*</View>*/}
-          {/*}*/}
           <View>
+            <View style={sideMenuStyle.container_sectionHeadingStyle}>
+              <Text style={[sideMenuStyle.sectionHeadingStyle, {
+                marginLeft: Config.layout_offset.left,
+                color: Colors.cloHeadline
+              },]}>
+                {'home'.toUpperCase()}
+              </Text>
+            </View>
             <View>
               <FlatList
                 data={this.itemDrawer.topSections}
@@ -267,7 +232,83 @@ class CDrawer extends React.Component {
               />
             </View>
           </View>
+          {this.general.menu_categories.post &&
           <View>
+            <View style={sideMenuStyle.container_sectionHeadingStyle}>
+              <Text style={[sideMenuStyle.sectionHeadingStyle, {
+                marginLeft: Config.layout_offset.left,
+                color: Colors.cloHeadline
+              },]}>
+                {String.txtDrawerSection_2.toUpperCase()}
+              </Text>
+            </View>
+            {this._categories.length > 0 &&
+            <View>
+              <FlatList
+                data={this._categories}
+                renderItem={({item, index}) => {
+                  return (
+                    <TouchableOpacity
+                      key={index}
+                      style={sideMenuStyle.container_navItemStyle}
+                      onPress={() => this._navigateToCategory(item.id, item.name, true)}
+                    >
+                      <Icon
+                        containerStyle={[sideMenuStyle.container_iconnav, {paddingHorizontal: Config.layout_offset.left}]}
+                        name={item.acf ? item.acf.class_name : 'newspaper'}
+                        size={20} color={Colors.cloBody} type={'light'}/>
+                      <Text style={[sideMenuStyle.navItemStyle, {color: Colors.cloBody}]}>
+                        {item.name}
+                      </Text>
+                    </TouchableOpacity>
+                  )
+                }}
+                keyExtractor={(item, index) => index.toString()}
+              />
+            </View>
+            }
+          </View>
+          }
+
+
+          <View>
+            <View style={sideMenuStyle.container_sectionHeadingStyle}>
+              <Text style={[sideMenuStyle.sectionHeadingStyle, {
+                marginLeft: Config.layout_offset.left,
+                color: Colors.cloHeadline
+              },]}>
+                {'live stream'.toUpperCase()}
+              </Text>
+            </View>
+            <View>
+              <TouchableOpacity style={sideMenuStyle.container_navItemStyle}
+                                onPress={() => this._navigateToPage('contact', this._init.CONTACT_US)}>
+                <Icon containerStyle={[sideMenuStyle.container_iconnav, {paddingHorizontal: 22}]}
+                      name={'headphones'} size={15} color={'rgba(28,28,28,0.80)'} type={'light'}/>
+                <Text style={[sideMenuStyle.navItemStyle, {color: 'rgba(28,28,28,0.80)'}]}>
+                  {'Radio'}
+                </Text>
+              </TouchableOpacity>
+
+              <TouchableOpacity style={sideMenuStyle.container_navItemStyle}
+                                onPress={() => this._navigateToPage(this.general.privacy_page ? this.general.privacy_page : -1, this._init.POLICY)}>
+                <Icon containerStyle={[sideMenuStyle.container_iconnav, {paddingHorizontal: 22}]}
+                      name={'tv'} size={15} color={'rgba(28,28,28,0.80)'} type={'light'}/>
+                <Text style={[sideMenuStyle.navItemStyle, {color: 'rgba(28,28,28,0.80)'}]}>
+                  {'TV'}
+                </Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+          <View>
+            <View style={sideMenuStyle.container_sectionHeadingStyle}>
+              <Text style={[sideMenuStyle.sectionHeadingStyle, {
+                marginLeft: Config.layout_offset.left,
+                color: Colors.cloHeadline
+              },]}>
+                {'Legal'.toUpperCase()}
+              </Text>
+            </View>
             <View>
               <TouchableOpacity style={sideMenuStyle.container_navItemStyle}
                                 onPress={() => this._navigateToPage('contact', this._init.CONTACT_US)}>

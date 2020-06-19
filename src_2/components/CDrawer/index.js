@@ -272,30 +272,13 @@ class CDrawer extends React.Component {
 
 
           <View>
-            <View style={sideMenuStyle.container_sectionHeadingStyle}>
-              <Text style={[sideMenuStyle.sectionHeadingStyle, {
-                marginLeft: Config.layout_offset.left,
-                color: Colors.cloHeadline
-              },]}>
-                {'live stream'.toUpperCase()}
-              </Text>
-            </View>
             <View>
               <TouchableOpacity style={sideMenuStyle.container_navItemStyle}
                                 onPress={() => this._navigateToPage('contact', this._init.CONTACT_US)}>
                 <Icon containerStyle={[sideMenuStyle.container_iconnav, {paddingHorizontal: 22}]}
                       name={'headphones'} size={15} color={'rgba(28,28,28,0.80)'} type={'light'}/>
                 <Text style={[sideMenuStyle.navItemStyle, {color: 'rgba(28,28,28,0.80)'}]}>
-                  {'Radio'}
-                </Text>
-              </TouchableOpacity>
-
-              <TouchableOpacity style={sideMenuStyle.container_navItemStyle}
-                                onPress={() => this._navigateToPage(this.general.privacy_page ? this.general.privacy_page : -1, this._init.POLICY)}>
-                <Icon containerStyle={[sideMenuStyle.container_iconnav, {paddingHorizontal: 22}]}
-                      name={'tv'} size={15} color={'rgba(28,28,28,0.80)'} type={'light'}/>
-                <Text style={[sideMenuStyle.navItemStyle, {color: 'rgba(28,28,28,0.80)'}]}>
-                  {'TV'}
+                  {'Guide Radio'}
                 </Text>
               </TouchableOpacity>
             </View>

@@ -192,12 +192,15 @@ export default Helpers = {
   },
 
   getLastPeriod: (time, fullday) => {
+    moment.locale('en-gb')
     let _ago = moment() - moment(time);
-    let _days = _ago / (1000 * 60 * 60 * 24);
-    let _hours = _ago / (1000 * 60 * 60);
-    let _minutes = _ago / (1000 * 60);
-    if (_days > 1) {
-      if (fullday == 'fullday') {
+    console.log('this is the time',moment(time).fromNow());
+
+    let _days = Math.abs(_ago / (1000 * 60 * 60 * 24));
+    let _hours = Math.abs(_ago / (1000 * 60 * 60));
+    let _minutes = Math.abs(_ago / (1000 * 60));
+    if (Math.abs(_days) > 1) {
+      if (fullday === 'fullday') {
         return moment(time).format(Config.settingV2.general.date_format);
       }
       return Languages[Config.lang].AGO + ' ' + Math.floor(_days) + ' ' + Languages[Config.lang].TIME.DAY;
@@ -211,7 +214,7 @@ export default Helpers = {
   stripTags: (txt) => {
     return txt.replace(/(<([^>]+)>)/ig, "").replace(/\n/gi, '');
   },
-  
+
   /**
    ** Remove multi data local storage
   **/
@@ -265,7 +268,7 @@ export default Helpers = {
     }
   },
 
-  
+
   /**
    * Toast an message
    */

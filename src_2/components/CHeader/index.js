@@ -163,7 +163,7 @@ class CHeader extends React.Component {
 
   _onPressShare = () => {
     Share.share({
-      message: 'Do you want to share?',
+      message: this.props.data.orginData.link,
       url: this.props.data.orginData.link,
       title: 'Sharing'
     }, {
@@ -177,7 +177,6 @@ class CHeader extends React.Component {
   }
 
   _onPressPlayAudio = async () => {
-
     if (!this.state.isPlayingAudio) {
       SoundPlayer.play();
       this.setState({ isPlayingAudio: true });

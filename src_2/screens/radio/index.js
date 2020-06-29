@@ -8,6 +8,7 @@ import Icon from "react-native-fontawesome-pro";
 import ico_bars from "../../../assets/icons/ico_bars.png";
 import {commonStyles} from "~/utils/styles";
 import headerStyle from "~/components/CHeader/style";
+import CLoading from "~/components/CLoading";
 
 
 const RadioScreen = (props) => {
@@ -24,7 +25,6 @@ const RadioScreen = (props) => {
             props.navigation.navigate('home')
           }} />
         </Left>
-
         <Body style={commonStyles.column_align_center}>
           <Title>
             <Text style={headerStyle.txt_title} ellipsizeMode={"tail"} numberOfLines={1}>
@@ -50,7 +50,6 @@ const RadioScreen = (props) => {
           }}
         />
       </View>
-
     </SafeAreaView>
   )
 };

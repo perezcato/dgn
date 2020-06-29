@@ -1,8 +1,8 @@
 /**
- ** Name: 
- ** Author: 
- ** CreateAt: 
- ** Description: 
+ ** Name:
+ ** Author:
+ ** CreateAt:
+ ** Description:
 **/
 /* LIBRARY */
 import React from 'react';
@@ -58,7 +58,6 @@ export const ViewSubCategories = ({
   onFunction = {
     onBack: () => { },
     onPressItem: () => { },
-    onRenderTabbar: () => { },
     onRenderScene: () => { },
     onChangeTabIndex: () => { },
   }
@@ -68,7 +67,7 @@ export const ViewSubCategories = ({
       initialLayout={styles.con_tab}
       navigationState={state}
       renderScene={onFunction.onRenderScene}
-      renderTabBar={onFunction.onRenderTabbar}
+      renderTabBar={()=><View></View>}
       onIndexChange={onFunction.onChangeTabIndex}
       lazy={true}
       lazyPreloadDistance={0}
@@ -77,11 +76,5 @@ export const ViewSubCategories = ({
       removeClippedSubviews={Device.OS === 'android'}
       swipeEnabled={false}
     />
-    // <FlatList style={styles.con}
-    //   contentContainerStyle={styles.con_content_list, { paddingHorizontal: Config.layout_offset.left }}
-    //   data={state._dataSubCategories}
-    //   renderItem={({ item, index }) => ViewSubCategoryItem(index, item, onFunction.onPressItem)}
-    //   keyExtractor={(item, index) => index.toString()}
-    // />
   )
 }

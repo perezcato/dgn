@@ -1,5 +1,5 @@
 /**
- * @Description: Image Left layout 
+ * @Description: Image Left layout
  * @Created by ZiniTeam
  * @Date create: 14/11/2018
  */
@@ -34,7 +34,9 @@ class ImageLeft extends React.Component {
     )
   }
   _onPressDeleteOK = (data, rowMap) => {
-    rowMap[data.item.key].closeRow();
+    console.log('this is the rowmap',rowMap);
+    console.log('this is the data',data);
+    rowMap[data.index].closeRow();
     this.props.onDeleteItem(data.item.id);
   }
 

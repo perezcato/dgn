@@ -82,10 +82,7 @@ const getBorderRadius = (height) => {
 }
 
 export const Config = {
-  /* URL API */
-  host: 'https://news.aftown.com',
-  // host: 'http://food.zapes.zinisoft.net',
-  //host: 'https://smi.kg',
+  host: 'https://dailyguidenetwork.com',
   /* LANG */
   lang: 'en',
 
@@ -104,7 +101,7 @@ export const Config = {
   layout_offset: {
     left: 15,
     right: 15,
-    vertical: 5
+    vertical: 3
   },
 
   /* INIT ICON */

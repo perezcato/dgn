@@ -34,6 +34,7 @@ class BookmarkScreen extends React.Component {
   /* Functions */
   _onDeleteItem = async id => {
     let { _dataBookMarkIds, _dataBookMark } = this.state;
+    console.log(_dataBookMarkIds)
     if (_dataBookMarkIds && _dataBookMarkIds.length > 0) {
       let pos = _dataBookMarkIds.indexOf(id);
       if (pos != -1) {
@@ -106,7 +107,6 @@ class BookmarkScreen extends React.Component {
     return (
       <View style={styles.container}>
         <CHeader title={'Bookmark'} />
-
         {_loading ? <CLoading /> :
           <View style={styles.container_content_2}>
             {lenData > 0 &&
@@ -115,10 +115,9 @@ class BookmarkScreen extends React.Component {
                 data={_dataBookMark}
               />
             }
-
             {lenData == 0 &&
               <Text style={{ color: 'black', fontSize: Device.fS(15), fontFamily: Device.fontSlabRegular }}>
-                {Languages[Config.lang].NO_DATA}
+                No bookmarks saved
               </Text>
             }
           </View>

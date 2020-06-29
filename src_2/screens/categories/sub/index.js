@@ -1,8 +1,8 @@
 /**
- ** Name: 
- ** Author: 
- ** CreateAt: 
- ** Description: 
+ ** Name:
+ ** Author:
+ ** CreateAt:
+ ** Description:
 **/
 /* LIBRARY */
 import React from 'react';
@@ -318,12 +318,6 @@ class SubCategories extends React.Component {
               }
             </CScrollView>
         }
-
-        {/* {!_loading && _dataListPost.length == 0 &&
-          <View style={{ height: '100%', width: '100%', alignItems: 'center', marginTop: Device.h_scale('20%') }}>
-            <Text style={{ color: 'black', fontSize: Device.fS(14), fontFamily: Device.fontSlabRegular }}>{'No Data'}</Text>
-          </View>
-        } */}
       </View>
     )
   }

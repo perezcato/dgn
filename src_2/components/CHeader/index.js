@@ -5,7 +5,7 @@
  */
 /** LIBRARY */
 import React from 'react';
-import { View, Text, TouchableOpacity, Image, Share } from 'react-native';
+import { View, Text, TouchableOpacity, Image, Share, Alert } from 'react-native';
 import Icon from 'react-native-fontawesome-pro';
 import AsyncStorage from '@react-native-community/async-storage';
 import { useNavigation, useRoute } from '@react-navigation/native';
@@ -188,7 +188,6 @@ class CHeader extends React.Component {
   }
 
   _onPressBookmark = () => {
-    alert('you just pressed bookmark');
     let pos = this._arrBookmark.indexOf(this.props.data.id);
     if (pos != -1) {
       //remove
@@ -201,6 +200,7 @@ class CHeader extends React.Component {
     }
     this._arrBookmark = Array.from(new Set(this._arrBookmark));
     AsyncStorage.setItem(Key.ASYNC_STORAGE_BOOKMARK, JSON.stringify(this._arrBookmark));
+    return Alert.alert('Bookmarks','added to bookmarks')
   }
 
   _checkDataPost = async () => {

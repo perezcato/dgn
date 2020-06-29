@@ -249,7 +249,7 @@ class PostScreen extends React.Component {
 
                 {/* TITLE POST */}
                 <View style={{ paddingHorizontal: Config.layout_offset.left, paddingVertical: 10 }}>
-                  <Text style={[postStyle.txt_title, { color: this._settings.text_headline_color }]}>{newTitle}</Text>
+                  <Text style={[postStyle.txt_title, { color: '#000' }]}>{newTitle}</Text>
                   {<View style={postStyle.p_timeAuthor}>
                     <Text style={postStyle.txt_time_author}
                           numberOfLines={1}>{Languages[Config.lang].DATE_CREATED + ': '}</Text>
@@ -339,7 +339,6 @@ class PostScreen extends React.Component {
                         }
                       }}
                     />
-
                     {this._settings.post_show_tag && _tags.length > 0 &&
                       <View>
                         <Text style={[postStyle.txt_time_author, { fontFamily: Device.fontSlabBold }]}>Tag: </Text>
@@ -361,25 +360,26 @@ class PostScreen extends React.Component {
                 }
 
                 {/* RELATED POSTS */}
-                {  _dataRelated.length > 0 &&
-                  <View style={postStyle.relatedPosts}>
-                    <FlatList contentContainerStyle={{ paddingHorizontal: Config.layout_offset.left }}
-                      data={_dataRelated}
-                      renderItem={({ item, index }) => {
-                        return (
-                          <View key={index} style={{ width: '100%', height: Device.w_scale('28%'), marginVertical: 10 }}>
-                            <Item data={item} layoutLeft={true} hasExcerpt={true} onPress={this._onPressItem} />
-                          </View>
-                        )
-                      }}
-                      keyExtractor={(item, index) => index.toString()}
-                      ListHeaderComponent={
-                        <View style={[postStyle.title_wrapper]}>
-                          <Text style={postStyle.title}>{Languages[Config.lang].RELATED_POSTS.toUpperCase()}</Text>
-                        </View>
-                      }
-                    />
-                  </View>
+                {  <View style={postStyle.relatedPosts}>
+                  <FlatList contentContainerStyle={{paddingHorizontal: Config.layout_offset.left}}
+                            data={_dataRelated}
+                            renderItem={({item, index}) => {
+                              return (
+                                <View key={index}
+                                      style={{width: '100%', height: Device.w_scale('28%'), marginVertical: 10}}>
+                                  <Item data={item} layoutLeft={true} hasExcerpt={true} onPress={this._onPressItem}/>
+                                </View>
+                              )
+                            }}
+                            keyExtractor={(item, index) => index.toString()}
+                            ListHeaderComponent={
+                              <View style={[postStyle.title_wrapper]}>
+                                <Text
+                                  style={postStyle.title}>Related Posts</Text>
+                              </View>
+                            }
+                  />
+                </View>
                 }
 
                 {/* POPULAR POSTS */}

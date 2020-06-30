@@ -42,9 +42,6 @@ const renderListCate = (item, index, onFunction) => {
       </View>
 
       <View style={styles.con_row_item_right}>
-        <View style={styles.con_count_product}>
-          <CText style={styles.txt_count_product}>{item.count}</CText>
-        </View>
         <Icon name={"chevron-right"} size={Device.fS(20)} color={Colors.BLACK_COLOR} type={"light"} />
       </View>
     </TouchableOpacity>

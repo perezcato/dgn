@@ -144,9 +144,14 @@ class CDrawer extends React.Component {
         }
         <View style={{marginLeft: 25}}>
           <Text
-            style={[sideMenuStyle.navItemFooter, {color: Colors.cloBody}]}>{(this.general && this.general.app_name) ? this.general.app_name : ''}</Text>
+            style={[sideMenuStyle.navItemFooter, {color: Colors.cloBody}]}>
+            © {new Date().getFullYear()} Daily Guide Network.
+          </Text>
           <Text
-            style={[sideMenuStyle.navItemFooter, {color: Colors.cloBody}]}>{'Version'} {(this.general && this.general.app_version) ? this.general.app_version : ''}</Text>
+            style={[sideMenuStyle.navItemFooter, {color: Colors.cloBody}]}
+          >
+            All right Reserved
+          </Text>
         </View>
         {this._logoPosition == 1 ?
           <Image
@@ -297,14 +302,6 @@ class CDrawer extends React.Component {
               </Text>
             </View>
             <View>
-              <TouchableOpacity style={sideMenuStyle.container_navItemStyle}
-                                onPress={() => this._navigateToPage('contact', this._init.CONTACT_US)}>
-                <Icon containerStyle={[sideMenuStyle.container_iconnav, {paddingHorizontal: 22}]}
-                      name={'phone'} size={15} color={'rgba(28,28,28,0.80)'} type={'light'}/>
-                <Text style={[sideMenuStyle.navItemStyle, {color: 'rgba(28,28,28,0.80)'}]}>
-                  {this._init.CONTACT_US}
-                </Text>
-              </TouchableOpacity>
 
               <TouchableOpacity style={sideMenuStyle.container_navItemStyle}
                                 onPress={() => this._navigateToPage(this.general.privacy_page ? this.general.privacy_page : -1, this._init.POLICY)}>
@@ -323,7 +320,41 @@ class CDrawer extends React.Component {
                   {this._init.TERM_OF_USE}
                 </Text>
               </TouchableOpacity>
+              <TouchableOpacity style={sideMenuStyle.container_navItemStyle}
+                                onPress={() => {
+                                  return this.props.navigation.navigate(('cookie'));
+                                }}>
+                <Icon containerStyle={[sideMenuStyle.container_iconnav, {paddingHorizontal: 22}]}
+                      name={'user-secret'} size={15} color={'rgba(28,28,28,0.80)'} type={'light'}/>
+                <Text style={[sideMenuStyle.navItemStyle, {color: 'rgba(28,28,28,0.80)'}]}>
+                  Cookie Policy
+                </Text>
+              </TouchableOpacity>
+
+              <TouchableOpacity style={sideMenuStyle.container_navItemStyle}
+                                onPress={() => {
+                                  return this.props.navigation.navigate(('about'));
+                                }}>
+                <Icon containerStyle={[sideMenuStyle.container_iconnav, {paddingHorizontal: 22}]}
+                      name={'user'} size={15} color={'rgba(28,28,28,0.80)'} type={'light'}/>
+                <Text style={[sideMenuStyle.navItemStyle, {color: 'rgba(28,28,28,0.80)'}]}>
+                  About DGN
+                </Text>
+              </TouchableOpacity>
+
+              <TouchableOpacity style={sideMenuStyle.container_navItemStyle}
+                                onPress={() => this._navigateToPage('contact', this._init.CONTACT_US)}>
+                <Icon containerStyle={[sideMenuStyle.container_iconnav, {paddingHorizontal: 22}]}
+                      name={'phone'} size={15} color={'rgba(28,28,28,0.80)'} type={'light'}/>
+                <Text style={[sideMenuStyle.navItemStyle, {color: 'rgba(28,28,28,0.80)'}]}>
+                  {this._init.CONTACT_US}
+                </Text>
+              </TouchableOpacity>
             </View>
+          </View>
+
+          <View style={sideMenuStyle.container_footer}>
+            {this._renderFooter()}
           </View>
         </ScrollView>
       </View>

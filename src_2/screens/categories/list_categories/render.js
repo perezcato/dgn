@@ -27,10 +27,25 @@ const ViewListEmpty = () => {
   )
 }
 const renderListCate = (item, index, onFunction) => {
+  let source = "";
+  if (item.thumbnail) {
+    source = { uri: item.thumbnail.sizes.thumbnail }
+  }
   return (
     <TouchableOpacity style={styles.con_row_item} key={index} activeOpacity={.5} onPress={() => onFunction.onPressItem(item)} >
       <View style={styles.con_row_item_left}>
+        <CImage
+          style={styles.img_item}
+          src={source}
+        />
         <CText style={styles.txt_title_item} numberOfLines={3}>{Config.html5Entities.decode(item.name)}</CText>
+      </View>
+
+      <View style={styles.con_row_item_right}>
+        <View style={styles.con_count_product}>
+          <CText style={styles.txt_count_product}>{item.count}</CText>
+        </View>
+        <Icon name={"chevron-right"} size={Device.fS(20)} color={Colors.BLACK_COLOR} type={"light"} />
       </View>
     </TouchableOpacity>
   )

@@ -69,7 +69,6 @@ class BookmarkScreen extends React.Component {
       { cancelable: true }
     )
   }
-
   _getAsyncStorage = async () => {
     let { _dataBookMarkIds, _dataBookMark } = this.state;
     //GET DATA FROM STORAGE
@@ -89,17 +88,12 @@ class BookmarkScreen extends React.Component {
     }
     this.setState({ _dataBookMarkIds, _dataBookMark, _loading: false });
   }
-
-
-  /** LIFE CYCLE */
   componentDidMount() {
     this.props.navigation.addListener('focus', () => {
       this.setState({ _loading: true });
       this._getAsyncStorage();
     });
   }
-
-  /** RENDER */
   render() {
     let { _loading, _dataBookMark } = this.state;
     let lenData = _dataBookMark.length;

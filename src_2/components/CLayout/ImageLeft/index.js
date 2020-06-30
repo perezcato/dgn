@@ -34,8 +34,6 @@ class ImageLeft extends React.Component {
     )
   }
   _onPressDeleteOK = (data, rowMap) => {
-    console.log('this is the rowmap',rowMap);
-    console.log('this is the data',data);
     rowMap[data.index].closeRow();
     this.props.onDeleteItem(data.item.id);
   }

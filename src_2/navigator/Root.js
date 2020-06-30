@@ -37,6 +37,8 @@ import AppIntroScreen from '~/screens/app_intro';
 /** COMMON */
 import { Colors } from '~/utils/colors';
 import { commonFonts } from '~/utils/styles';
+import CookieScreen from "~/screens/cookie_policy";
+import AboutUs from "~/screens/about_us";
 
 
 /** INIT NAVIGATOR OF APP */
@@ -116,6 +118,8 @@ class RootMain extends React.Component {
           <StackMain.Screen name="comment" component={CommentScreen} />
           <StackMain.Screen name="appIntro" component={AppIntroScreen} />
           <StackMain.Screen name="radio" component={RadioScreen} />
+          <StackMain.Screen name="cookie" component={CookieScreen} />
+          <StackMain.Screen name="about" component={AboutUs} />
         </StackMain.Navigator>
       </Root>
     )

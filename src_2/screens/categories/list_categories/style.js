@@ -1,8 +1,8 @@
 /**
- ** Name: 
- ** Author: 
- ** CreateAt: 
- ** Description: 
+ ** Name:
+ ** Author:
+ ** CreateAt:
+ ** Description:
 **/
 /* COMMON */
 import { Device, Config } from '~/config';
@@ -25,7 +25,10 @@ export default styles = {
 
   img_item_header: { width: "100%", height: "100%", borderRadius: 10, },
   img_item: {
-    width: Device.sW("15%"), height: Device.sW("15%"), borderRadius: Device.bR(Device.sW("15%")), borderWidth: 1,
+    width: Device.sW("9%"),
+    height: Device.sW("9%"),
+    borderRadius: Device.bR(Device.sW("1%")),
+    borderWidth: 1,
     borderColor: Colors.BACKGROUND_ITEM_COLOR
   },
 

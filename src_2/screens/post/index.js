@@ -1,9 +1,3 @@
-/**
- * @Description: Post screen
- * @Created by ZiniTeam
- * @Date create: 20/11/2018
- */
-/** LIBRARY */
 import React from 'react';
 import { View, StyleSheet, Text, ScrollView, TouchableOpacity, Dimensions, StatusBar, FlatList } from 'react-native';
 import { WebView } from 'react-native-webview';
@@ -359,28 +353,28 @@ class PostScreen extends React.Component {
                   </View>
                 }
 
-                {/* RELATED POSTS */}
-                {  <View style={postStyle.relatedPosts}>
-                  <FlatList contentContainerStyle={{paddingHorizontal: Config.layout_offset.left}}
-                            data={_dataRelated}
-                            renderItem={({item, index}) => {
-                              return (
-                                <View key={index}
-                                      style={{width: '100%', height: Device.w_scale('28%'), marginVertical: 10}}>
-                                  <Item data={item} layoutLeft={true} hasExcerpt={true} onPress={this._onPressItem}/>
-                                </View>
-                              )
-                            }}
-                            keyExtractor={(item, index) => index.toString()}
-                            ListHeaderComponent={
-                              <View style={[postStyle.title_wrapper]}>
-                                <Text
-                                  style={postStyle.title}>Related Posts</Text>
-                              </View>
-                            }
-                  />
-                </View>
-                }
+                {/*/!* RELATED POSTS *!/*/}
+                {/*{  <View style={postStyle.relatedPosts}>*/}
+                {/*  <FlatList contentContainerStyle={{paddingHorizontal: Config.layout_offset.left}}*/}
+                {/*            data={_dataRelated}*/}
+                {/*            renderItem={({item, index}) => {*/}
+                {/*              return (*/}
+                {/*                <View key={index}*/}
+                {/*                      style={{width: '100%', height: Device.w_scale('28%'), marginVertical: 10}}>*/}
+                {/*                  <Item data={item} layoutLeft={true} hasExcerpt={true} onPress={this._onPressItem}/>*/}
+                {/*                </View>*/}
+                {/*              )*/}
+                {/*            }}*/}
+                {/*            keyExtractor={(item, index) => index.toString()}*/}
+                {/*            ListHeaderComponent={*/}
+                {/*              <View style={[postStyle.title_wrapper]}>*/}
+                {/*                <Text*/}
+                {/*                  style={postStyle.title}>Related Posts</Text>*/}
+                {/*              </View>*/}
+                {/*            }*/}
+                {/*  />*/}
+                {/*</View>*/}
+                {/*}*/}
 
                 {/* POPULAR POSTS */}
                 {this._settings.post_show_popular_post && _dataPopular.length > 0 &&

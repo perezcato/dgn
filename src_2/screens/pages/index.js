@@ -1,8 +1,3 @@
-/**
- * @Description: Contact Screen
- * @Created by ZiniTeam
- * @Date create: 02/01/2019
- */
 
 /** LIBRARY */
 import React from 'react';
@@ -33,7 +28,7 @@ class PageScreen extends React.Component {
 
     render() {
         let { _loading, _dataResp } = this.state;
-    
+
         return (
             <Drawer
                 ref={ref => this._drawer = ref}
@@ -45,9 +40,9 @@ class PageScreen extends React.Component {
                     {_loading ?
                         <CLoading />
                         :
-                        <ScrollView showsVerticalScrollIndicator={false} 
+                        <ScrollView showsVerticalScrollIndicator={false}
                             contentContainerStyle={[PageStyle.content_box, { paddingHorizontal: Config.layout_offset.left }]}>
-                            {_dataResp && _dataResp.content && 
+                            {_dataResp && _dataResp.content &&
                             <HTML html={_dataResp.content.rendered} imagesMaxWidth={Dimensions.get('window').width} />
                             }
                         </ScrollView>

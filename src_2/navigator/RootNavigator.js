@@ -1,8 +1,8 @@
 /**
-** Name: 
-** Author: 
-** CreateAt: 
-** Description: 
+** Name:
+** Author:
+** CreateAt:
+** Description:
 **/
 /* LIBRARY */
 import React from 'react';
@@ -59,7 +59,7 @@ class AppNavigation extends React.Component {
     _getToken = async () => {
         let fcmToken = await firebase.messaging().getToken();
         if (fcmToken) {
-            // Register token 
+            // Register token
             this._registerTokenFCM(fcmToken);
         } else this._requestPermission();
     }

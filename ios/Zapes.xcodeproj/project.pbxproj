@@ -905,7 +905,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zapes;
+				PRODUCT_BUNDLE_IDENTIFIER = com.technation.dgn;
 				PRODUCT_NAME = Zapes;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -928,7 +928,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zapes;
+				PRODUCT_BUNDLE_IDENTIFIER = com.technation.dgn;
 				PRODUCT_NAME = Zapes;
 				VERSIONING_SYSTEM = "apple-generic";
 			};

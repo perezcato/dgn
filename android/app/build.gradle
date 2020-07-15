@@ -139,7 +139,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.zapes"
+        applicationId "com.technation.dgn"
         vectorDrawables.useSupportLibrary = true
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
@@ -157,10 +157,10 @@ android {
     }
     signingConfigs {
         debug {
-            storeFile file('debug.keystore')
-            storePassword 'android'
-            keyAlias 'androiddebugkey'
-            keyPassword 'android'
+            storeFile file('technation.keystore')
+            storePassword 'dgnapp'
+            keyAlias 'technationgh'
+            keyPassword 'dgnapp'
         }
 		release {
             if (project.hasProperty('MYAPP_RELEASE_STORE_FILE')) {

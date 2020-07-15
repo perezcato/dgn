@@ -91,7 +91,7 @@ export const Config = {
   settingV2: null,
   homeSettings: [],
   ratingAppleAppID: '1486275953',
-  ratingGooglePackageName: 'com.zapes',
+  ratingGooglePackageName: 'com.technation.dgn',
 
   /** RATE */
   numberToShowRate: 10,

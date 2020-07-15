@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:273623369521:android:8164d0b3a9bfbf8cbad210",
         "android_client_info": {
-          "package_name": "com.zapes"
+          "package_name": "com.technation.dgn"
         }
       },
       "oauth_client": [
@@ -35,7 +35,7 @@
               "client_id": "273623369521-njkj8ococadin3neov236e271a70mtvn.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.zapes"
+                "bundle_id": "com.technation"
               }
             }
           ]

@@ -192,7 +192,6 @@ export default Helpers = {
   },
 
   getLastPeriod: (time, fullday) => {
-    moment.locale('en-gb')
     let _ago = moment() - moment(time);
     console.log('this is the time',moment(time).fromNow());
 

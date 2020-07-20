@@ -94,6 +94,7 @@ PODS:
     - nanopb/encode (= 0.3.9011)
   - nanopb/decode (0.3.9011)
   - nanopb/encode (0.3.9011)
+  - OneSignal (2.14.2)
   - PromisesObjC (1.2.8)
   - Protobuf (3.12.0)
   - RCTRequired (0.61.5)
@@ -261,13 +262,18 @@ PODS:
   - React-jsinspector (0.61.5)
   - react-native-netinfo (4.7.0):
     - React
-  - react-native-safe-area-context (2.0.2):
+  - react-native-onesignal (3.8.1):
+    - OneSignal (= 2.14.2)
+    - React (< 1.0.0, >= 0.13.0)
+  - react-native-restart (0.0.17):
+    - React
+  - react-native-safe-area-context (0.7.3):
     - React
   - react-native-splash-screen (3.2.0):
     - React
   - react-native-viewpager (2.0.2):
     - React
-  - react-native-webview (8.0.3):
+  - react-native-webview (8.2.1):
     - React
   - React-RCTActionSheet (0.61.5):
     - React-Core/RCTActionSheetHeaders (= 0.61.5)
@@ -304,7 +310,7 @@ PODS:
     - React-cxxreact (= 0.61.5)
     - React-jsi (= 0.61.5)
     - ReactCommon/jscallinvoker (= 0.61.5)
-  - RNCAsyncStorage (1.7.1):
+  - RNCAsyncStorage (1.11.0):
     - React
   - RNCMaskedView (0.1.10):
     - React
@@ -321,13 +327,13 @@ PODS:
     - React
   - RNLocalize (1.4.0):
     - React
-  - RNRate (1.1.10):
+  - RNRate (1.2.1):
     - React
   - RNReanimated (1.9.0):
     - React
   - RNScreens (2.8.0):
     - React
-  - RNSoundPlayer (0.10.3):
+  - RNSoundPlayer (0.10.4):
     - React
   - RNSVG (9.13.6):
     - React
@@ -358,6 +364,8 @@ DEPENDENCIES:
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
   - "react-native-netinfo (from `../node_modules/@react-native-community/netinfo`)"
+  - react-native-onesignal (from `../node_modules/react-native-onesignal`)
+  - react-native-restart (from `../node_modules/react-native-restart`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - react-native-splash-screen (from `../node_modules/react-native-splash-screen`)
   - "react-native-viewpager (from `../node_modules/@react-native-community/viewpager`)"
@@ -386,7 +394,7 @@ DEPENDENCIES:
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - boost-for-react-native
     - Crashlytics
     - Fabric
@@ -401,6 +409,7 @@ SPEC REPOS:
     - GoogleIDFASupport
     - GoogleUtilities
     - nanopb
+    - OneSignal
     - PromisesObjC
     - Protobuf
 
@@ -437,6 +446,10 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/jsinspector"
   react-native-netinfo:
     :path: "../node_modules/@react-native-community/netinfo"
+  react-native-onesignal:
+    :path: "../node_modules/react-native-onesignal"
+  react-native-restart:
+    :path: "../node_modules/react-native-restart"
   react-native-safe-area-context:
     :path: "../node_modules/react-native-safe-area-context"
   react-native-splash-screen:
@@ -509,6 +522,7 @@ SPEC CHECKSUMS:
   GoogleIDFASupport: aaf8c10bd429abb1c15349d5252244f5eda8ead1
   GoogleUtilities: 39530bc0ad980530298e9c4af8549e991fd033b1
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
+  OneSignal: 1dcb1fd96f9c15a5c352dcfcab9106a7c15eced7
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
   Protobuf: 2793fcd0622a00b546c60e7cbbcc493e043e9bb9
   RCTRequired: b153add4da6e7dbc44aebf93f3cf4fcae392ddf1
@@ -521,10 +535,12 @@ SPEC CHECKSUMS:
   React-jsiexecutor: d5525f9ed5f782fdbacb64b9b01a43a9323d2386
   React-jsinspector: fa0ecc501688c3c4c34f28834a76302233e29dc0
   react-native-netinfo: 3dd993921571d01b78a8f91f1caaffcab7a1e1c7
-  react-native-safe-area-context: 7650527fd9fda092aa151828e387d6aa33158c2d
+  react-native-onesignal: aad5c22170ee7a48ac2005bf1cdd2cfd8f45e51b
+  react-native-restart: 3b23471050bde7f392395703c4a3f959e2b0ff8e
+  react-native-safe-area-context: 8260e5157617df4b72865f44006797f895b2ada7
   react-native-splash-screen: 200d11d188e2e78cea3ad319964f6142b6384865
   react-native-viewpager: bbba55db2dc7554b88f986a88f8440bf2e624419
-  react-native-webview: de308e0b614039e483eef19a3cf6a9b6b166cff0
+  react-native-webview: d3cf75764f98fd433f1222f5a7ca8e355ada2a15
   React-RCTActionSheet: 600b4d10e3aea0913b5a92256d2719c0cdd26d76
   React-RCTAnimation: 791a87558389c80908ed06cc5dfc5e7920dfa360
   React-RCTBlob: d89293cc0236d9cb0933d85e430b0bbe81ad1d72
@@ -535,18 +551,18 @@ SPEC CHECKSUMS:
   React-RCTText: 9ccc88273e9a3aacff5094d2175a605efa854dbe
   React-RCTVibration: a49a1f42bf8f5acf1c3e297097517c6b3af377ad
   ReactCommon: 198c7c8d3591f975e5431bec1b0b3b581aa1c5dd
-  RNCAsyncStorage: 8539fc80a0075fcc9c8e2dff84cd22dc5bf1dacf
+  RNCAsyncStorage: db711e29e5e0500d9bd21aa0c2e397efa45302b1
   RNCMaskedView: f5c7d14d6847b7b44853f7acb6284c1da30a3459
   RNFirebase: 37daa9a346d070f9f6ee1f3b4aaf4c8e3b1d5d1c
   RNGestureHandler: 8f09cd560f8d533eb36da5a6c5a843af9f056b38
   RNLocalize: fc27ee5878ce5a3af73873fb2d8e866e0d1e6d84
-  RNRate: d44a8bca6ee08f5d890ecccddaec2810955ffbb3
+  RNRate: a747cbaa6040d72994861864c988037fe0696548
   RNReanimated: b5ccb50650ba06f6e749c7c329a1bc3ae0c88b43
   RNScreens: 62211832af51e0aebcf6e8c36bcf7dd65592f244
-  RNSoundPlayer: 36fe7b7390a62c81a7eb4deeca07420399699872
+  RNSoundPlayer: b55bbb1b4cbf8b3f2c81db622d9db4b305407f5b
   RNSVG: 8ba35cbeb385a52fd960fd28db9d7d18b4c2974f
   Yoga: f2a7cd4280bfe2cca5a7aed98ba0eb3d1310f18b
 
-PODFILE CHECKSUM: e63cbb2550cba0b8df274f1b1ad26398fa50f525
+PODFILE CHECKSUM: 9f703397823a9593a85c0233cce9c4d82dd26e2b
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.8.4

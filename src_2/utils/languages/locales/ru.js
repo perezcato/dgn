@@ -26,6 +26,8 @@ export default {
   POPULAR_POSTS: 'Популярные посты',
   CATEGORIES: 'категории',
   PRIVATE_POLICY: 'Политика конфиденциальности',
+  COOKIE_POLICY: 'Cookie Policy',
+  ABOUT_US: 'About Us',
   TERM_OF_USE: 'Условия эксплуатации',
   CONTACT_US: 'Связаться с нами',
   SEARCH: 'Поиск',

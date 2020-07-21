@@ -33,7 +33,7 @@ class CRate extends React.PureComponent {
                 />
               </View>
 
-              <Text style={styles.txt_name_app}>{'Zapes'}</Text>
+              <Text style={styles.txt_name_app}>{'DGN'}</Text>
 
               <Text style={styles.txt_des}>{'Rating for application?'}</Text>
             </View>

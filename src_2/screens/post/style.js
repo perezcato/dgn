@@ -34,6 +34,7 @@ export default {
   txt_btn: commonStyles.txt_title_button,
 
   txt_title_video: [commonFonts.xxx_small, { textAlign: 'center', color: Colors.cloBodyMeta }],
-  txt_p_tag: {fontSize: Device.fS(14), fontFamily: Device.fontSlabRegular, color: Colors.cloBody},
+  txt_p_tag: {fontSize: Device.fS(12), fontFamily: Device.fontSlabRegular, color: Colors.cloBody},
   txt_h4: {fontSize: Device.fS(16), fontFamily: Device.fontSlabBold, color: Colors.cloHeadline},
+  txt_h2: {fontSize: Device.fS(24), fontFamily: Device.fontSlabBold, color: Colors.cloHeadline, marginTop: 20, marginBottom: 20},
 }

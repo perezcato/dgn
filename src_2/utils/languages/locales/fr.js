@@ -26,6 +26,8 @@ export default {
   POPULAR_POSTS: 'Articles populaires',
   CATEGORIES: 'Les catégories',
   PRIVATE_POLICY: 'Politique de confidentialité',
+  COOKIE_POLICY: 'Cookie Policy',
+  ABOUT_US: 'About Us',
   TERM_OF_USE: "Conditions d'utilisation",
   CONTACT_US: 'Nous contacter',
   SEARCH: 'Chercher',

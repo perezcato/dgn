@@ -25,8 +25,10 @@ export default {
   RELATED_POSTS: 'Related news',
   POPULAR_POSTS: 'Popular posts',
   CATEGORIES: 'Categories',
-  PRIVATE_POLICY: 'Private policy',
-  TERM_OF_USE: 'Term of use',
+  PRIVATE_POLICY: 'Privacy Policy',
+  COOKIE_POLICY: 'Cookie Policy',
+  ABOUT_US: 'About Us',
+  TERM_OF_USE: 'Term of Use',
   CONTACT_US: 'Contact us',
   SEARCH: 'Search',
   GALLERY: 'Gallery',
@@ -47,4 +49,4 @@ export default {
   SKIP: "Skip",
   VALIDATE_URL: "Please import plugin ZiniApi for your website",
   HOST_URL_NOT_EMPTY: "Host URL is not empty"
-}
+};

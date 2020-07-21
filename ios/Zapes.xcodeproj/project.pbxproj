@@ -78,7 +78,7 @@
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
-		00E356EE1AD99517003FC87E /* DGNTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DGNTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* ZapesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZapesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* ZapesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZapesTests.m; sourceTree = "<group>"; };
 		020E9217E4A04531A64D9C4D /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/native-base/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
@@ -90,7 +90,7 @@
 		0F58AECB18574EEAAF5D86B1 /* Roboto-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Black.ttf"; path = "../assets/fonts/Roboto-Black.ttf"; sourceTree = "<group>"; };
 		0FDDFE63A1EB4BE0B40A50B0 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/native-base/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		116BFD001EAD40BB996D0754 /* Roboto-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Italic.ttf"; path = "../assets/fonts/Roboto-Italic.ttf"; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* DGN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DGN.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07F961A680F5B00A75B9A /* Zapes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zapes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Zapes/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Zapes/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB21A68108700A75B9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -100,8 +100,8 @@
 		18B12D7260163F5EE5BE5899 /* Pods_Zapes_tvOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zapes_tvOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18C0602186C24666BB4F8BD6 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Regular.ttf"; path = "../assets/fonts/Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		280B5BFC6EB99FBD4E507E2A /* Pods-ZapesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZapesTests.debug.xcconfig"; path = "Target Support Files/Pods-ZapesTests/Pods-ZapesTests.debug.xcconfig"; sourceTree = "<group>"; };
-		2D02E47B1E0B4A5D006451C7 /* DGN-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DGN-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D02E4901E0B4A5D006451C7 /* DGN-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DGN-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D02E47B1E0B4A5D006451C7 /* Zapes-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Zapes-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D02E4901E0B4A5D006451C7 /* Zapes-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Zapes-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DBA10F06512F931ADBB3535 /* Pods-Zapes-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zapes-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Zapes-tvOSTests/Pods-Zapes-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3464B87191A044E7B8726D32 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/native-base/Fonts/Feather.ttf"; sourceTree = "<group>"; };
 		36EAD25C74394925B0E85874 /* Roboto-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-LightItalic.ttf"; path = "../assets/fonts/Roboto-LightItalic.ttf"; sourceTree = "<group>"; };
@@ -311,10 +311,10 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* DGN.app */,
-				00E356EE1AD99517003FC87E /* DGNTests.xctest */,
-				2D02E47B1E0B4A5D006451C7 /* DGN-tvOS.app */,
-				2D02E4901E0B4A5D006451C7 /* DGN-tvOSTests.xctest */,
+				13B07F961A680F5B00A75B9A /* Zapes.app */,
+				00E356EE1AD99517003FC87E /* ZapesTests.xctest */,
+				2D02E47B1E0B4A5D006451C7 /* Zapes-tvOS.app */,
+				2D02E4901E0B4A5D006451C7 /* Zapes-tvOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -322,9 +322,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* DGNTests */ = {
+		00E356ED1AD99517003FC87E /* ZapesTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "DGNTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "ZapesTests" */;
 			buildPhases = (
 				F7CD0072F3B54B61DC8A3673 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
@@ -336,14 +336,14 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = DGNTests;
+			name = ZapesTests;
 			productName = ZapesTests;
-			productReference = 00E356EE1AD99517003FC87E /* DGNTests.xctest */;
+			productReference = 00E356EE1AD99517003FC87E /* ZapesTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* DGN */ = {
+		13B07F861A680F5B00A75B9A /* Zapes */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "DGN" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Zapes" */;
 			buildPhases = (
 				6CA99BB530F7813E92FF6F4F /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
@@ -358,14 +358,14 @@
 			);
 			dependencies = (
 			);
-			name = DGN;
+			name = Zapes;
 			productName = Zapes;
-			productReference = 13B07F961A680F5B00A75B9A /* DGN.app */;
+			productReference = 13B07F961A680F5B00A75B9A /* Zapes.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D02E47A1E0B4A5D006451C7 /* DGN-tvOS */ = {
+		2D02E47A1E0B4A5D006451C7 /* Zapes-tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "DGN-tvOS" */;
+			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "Zapes-tvOS" */;
 			buildPhases = (
 				016A2128D780F1D8B2116CD8 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F122414F3F0027D42C /* Start Packager */,
@@ -378,14 +378,14 @@
 			);
 			dependencies = (
 			);
-			name = "DGN-tvOS";
+			name = "Zapes-tvOS";
 			productName = "Zapes-tvOS";
-			productReference = 2D02E47B1E0B4A5D006451C7 /* DGN-tvOS.app */;
+			productReference = 2D02E47B1E0B4A5D006451C7 /* Zapes-tvOS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D02E48F1E0B4A5D006451C7 /* DGN-tvOSTests */ = {
+		2D02E48F1E0B4A5D006451C7 /* Zapes-tvOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "DGN-tvOSTests" */;
+			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "Zapes-tvOSTests" */;
 			buildPhases = (
 				B3818942C1B8B58C90F7876F /* [CP] Check Pods Manifest.lock */,
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
@@ -397,9 +397,9 @@
 			dependencies = (
 				2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */,
 			);
-			name = "DGN-tvOSTests";
+			name = "Zapes-tvOSTests";
 			productName = "Zapes-tvOSTests";
-			productReference = 2D02E4901E0B4A5D006451C7 /* DGN-tvOSTests.xctest */;
+			productReference = 2D02E4901E0B4A5D006451C7 /* Zapes-tvOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -429,7 +429,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "DGN" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Zapes" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -442,10 +442,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* DGN */,
-				00E356ED1AD99517003FC87E /* DGNTests */,
-				2D02E47A1E0B4A5D006451C7 /* DGN-tvOS */,
-				2D02E48F1E0B4A5D006451C7 /* DGN-tvOSTests */,
+				13B07F861A680F5B00A75B9A /* Zapes */,
+				00E356ED1AD99517003FC87E /* ZapesTests */,
+				2D02E47A1E0B4A5D006451C7 /* Zapes-tvOS */,
+				2D02E48F1E0B4A5D006451C7 /* Zapes-tvOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -834,12 +834,12 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* DGN */;
+			target = 13B07F861A680F5B00A75B9A /* Zapes */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 		2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2D02E47A1E0B4A5D006451C7 /* DGN-tvOS */;
+			target = 2D02E47A1E0B4A5D006451C7 /* Zapes-tvOS */;
 			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -876,7 +876,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DGN.app/DGN";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Zapes.app/Zapes";
 			};
 			name = Debug;
 		};
@@ -896,7 +896,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DGN.app/DGN";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Zapes.app/Zapes";
 			};
 			name = Release;
 		};
@@ -918,7 +918,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.technation.dgn;
-				PRODUCT_NAME = DGN;
+				PRODUCT_NAME = Zapes;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -941,7 +941,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.technation.dgn;
-				PRODUCT_NAME = DGN;
+				PRODUCT_NAME = Zapes;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
@@ -1024,7 +1024,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.Zapes-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DGN-tvOS.app/DGN-tvOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Zapes-tvOS.app/Zapes-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Debug;
@@ -1051,7 +1051,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.Zapes-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DGN-tvOS.app/DGN-tvOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Zapes-tvOS.app/Zapes-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Release;
@@ -1160,7 +1160,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "DGNTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "ZapesTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -1169,7 +1169,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "DGN" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Zapes" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -1178,7 +1178,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "DGN-tvOS" */ = {
+		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "Zapes-tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4971E0B4A5E006451C7 /* Debug */,
@@ -1187,7 +1187,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "DGN-tvOSTests" */ = {
+		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "Zapes-tvOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4991E0B4A5E006451C7 /* Debug */,
@@ -1196,7 +1196,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "DGN" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Zapes" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,

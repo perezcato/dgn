@@ -25,6 +25,8 @@ export default {
   POPULAR_POSTS: 'Vừa cập nhật',
   CATEGORIES: 'Danh mục',
   PRIVATE_POLICY: 'Chính sách bảo mật',
+  COOKIE_POLICY: 'Cookie Policy',
+  ABOUT_US: 'About Us',
   TERM_OF_USE: 'Điều khoản sử dụng',
   CONTACT_US: 'Liên hệ',
   SEARCH: 'Tìm kiếm',

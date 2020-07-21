@@ -3,15 +3,19 @@ import {Image, SafeAreaView, Text, TouchableOpacity, View,ScrollView} from 'reac
 import { WebView } from 'react-native-webview';
 import {Config, Device, Languages} from "~/config";
 import postStyle from "~/screens/post/style";
-import {Body, Header, Left, Right, Title} from "native-base";
+import {Body, Drawer, Header, Left, Right, Title} from "native-base";
 import Icon from "react-native-fontawesome-pro";
 import ico_bars from "../../../assets/icons/ico_bars.png";
 import {commonStyles} from "~/utils/styles";
 import headerStyle from "~/components/CHeader/style";
 import CLoading from "~/components/CLoading";
+import CDrawer from "~/components/CDrawer";
+import styles from "~/screens/contact/style";
+import CHeader from "~/components/CHeader";
+import {connect} from "react-redux";
 
 
-const CookieScreen = (props) => {
+/*const CookieScreen = (props) => {
   const webView = useRef(null);
   return (
     <SafeAreaView style={{ flex: 1}}>
@@ -28,7 +32,7 @@ const CookieScreen = (props) => {
         <Body style={commonStyles.column_align_center}>
           <Title>
             <Text style={headerStyle.txt_title} ellipsizeMode={"tail"} numberOfLines={1}>
-              {'Cookie Policy'}
+              {Languages[Config.lang].COOKIE_POLICY}
             </Text>
           </Title>
         </Body>
@@ -58,7 +62,7 @@ const CookieScreen = (props) => {
           marginTop: 5
         }}>
           Company (referred to as either "the Company", "We", "Us" or "Our" in this Cookies Policy) refers to
-          Technation Ghana LLC, White Cross, Weija, Accra-Ghana .
+          Daily Guide Network, opposite Nima Police Station, Stephen Amartey Close, Nima Residential.
           You means the individual accessing or using the Website, or a company, or any legal entity on behalf of
           which such individual is accessing or using the Website, as applicable.
           Cookies means small files that are placed on Your computer, mobile device or any other device by a website,
@@ -146,4 +150,204 @@ const CookieScreen = (props) => {
   )
 };
 
-export default CookieScreen;
+export default CookieScreen;*/
+
+class CookieScreen extends React.Component {
+  /** FUNCTIONS */
+  _closeDrawer = () => {
+    this._drawer && this._drawer._root.close();
+  };
+
+  _openDrawer = () => {
+    this._drawer && this._drawer._root.open();
+  };
+
+  /** RENDER */
+  render() {
+    return (
+      <Drawer
+        ref={ref => (this._drawer = ref)}
+        content={
+          <CDrawer
+            navigation={this.props.navigation}
+            onClose={this._closeDrawer}
+          />
+        }
+        onClose={this._closeDrawer}
+      >
+        <View style={styles.container}>
+          <CHeader
+            title={Languages[Config.lang].COOKIE_POLICY}
+            onMenu={this._openDrawer}
+            onClose={this._closeDrawer}
+          />
+          <ScrollView
+            style={{
+              flex: 1,
+              padding: 15,
+              marginBottom: 15,
+            }}
+          >
+            <Text
+              style={{
+                ...postStyle.txt_h2
+              }}
+            >
+              For the purposes of this Cookies Policy:
+            </Text>
+            <Text
+              style={{
+                textAlign: 'justify',
+                ...postStyle.txt_p_tag,
+                marginTop: 5
+              }}
+            >
+              Company (referred to as either "the Company", "We", "Us" or "Our"
+              in this Cookies Policy) refers to Daily Guide Network, opposite
+              Nima Police Station, Stephen Amartey Close, Nima Residential. You
+              means the individual accessing or using the Website, or a company,
+              or any legal entity on behalf of which such individual is
+              accessing or using the Website, as applicable. Cookies means small
+              files that are placed on Your computer, mobile device or any other
+              device by a website, containing details of your browsing history
+              on that website among its many uses. Application refers to Daily
+              Guide Network app/ website (https://dailyguidenetwork.com/)
+            </Text>
+            <Text
+              style={{
+                marginTop: 8,
+                ...postStyle.txt_h2
+              }}
+            >
+              Type of Cookies We Use
+            </Text>
+            <Text
+              style={{
+                ...postStyle.txt_p_tag,
+                marginTop: 5,
+                textAlign: 'justify'
+              }}
+            >
+              Cookies can be "Persistent" or "Session" Cookies. Persistent
+              Cookies remain on your personal computer or mobile device when You
+              go offline, while Session Cookies are deleted as soon as You close
+              your web browser. We use both session and persistent Cookies for
+              the purposes set out below: Necessary / Essential Cookies Type:
+              Session Cookies Administered by: Us Purpose: These Cookies are
+              essential to provide You with services available through the
+              Website and to enable You to use some of its features. They help
+              to authenticate users and prevent fraudulent use of user accounts.
+              Without these Cookies, the services that You have asked for cannot
+              be provided, and We only use these Cookies to provide You with
+              those services. Functionality CookiesType: Persistent Cookies
+              Administered by: Us Purpose: These Cookies allow us to remember
+              choices You make when You use the Website/App, such as remembering
+              your login details or language preference. The purpose of these
+              Cookies is to provide You with a more personal experience and to
+              avoid You having to re-enter your preferences every time You use
+              the Website.
+            </Text>
+            <Text
+              style={{
+                ...postStyle.txt_h2
+              }}
+            >
+              Your Choices Regarding Cookies
+            </Text>
+            <Text
+              style={{
+                ...postStyle.txt_p_tag,
+                marginTop: 5,
+                textAlign: 'justify'
+              }}
+            >
+              If You prefer to avoid the use of Cookies on the Website, first
+              You must disable the use of Cookies in your browser and then
+              delete the Cookies saved in your browser associated with this
+              website. You may use this option for preventing the use of Cookies
+              at any time. If You do not accept Our Cookies, You may experience
+              some inconvenience in your use of the Application and some
+              features may not function properly. If You'd like to delete
+              Cookies or instruct your web browser to delete or refuse Cookies,
+              please visit the help pages of your web browser. For the Chrome
+              web browser, please visit this page from Google:
+              https://support.google.com/accounts/answer/32050 For the Internet
+              Explorer web browser, please visit this page from Microsoft:
+              http://support.microsoft.com/kb/278835 For the Firefox web
+              browser, please visit this page from Mozilla:
+              https://support.mozilla.org/en-US/kb/delete-cookies-remove-info-websites-stored
+              For the Safari web browser, please visit this page from Apple:
+              https://support.apple.com/guide/safari/manage-cookies-and-website-data-sfri11471/mac
+              For any other web browser, please visit your web browser's
+              official web pages. More Information about Cookies You can learn
+              more about cookies: All About Cookies.
+            </Text>
+            <Text
+              style={{
+                ...postStyle.txt_h2,
+                marginTop: 5
+              }}
+            >
+              Contact Us
+            </Text>
+            <Text
+              style={{
+                ...postStyle.txt_p_tag,
+                marginTop: 5,
+                marginBottom: 50,
+                textAlign: 'justify'
+              }}
+            >
+              If you have any questions about this Cookies Policy, You can
+              contact us: By phone number: (+233) 302 229 576
+            </Text>
+          </ScrollView>
+          {/*<View style={styles.content}>
+            <View style={styles.logo_box}>
+              <Image
+                style={styles.logo}
+                source={
+                  this._logo ? { uri: this._logo } : Config.ico_logo_default
+                }
+                resizeMode={'contain'}
+              />
+            </View>
+            <View style={styles.info}>
+              {this.INIT.map((item, index) => {
+                // console.log(item)
+                return (
+                  <TouchableOpacity
+                    key={index}
+                    style={styles.info_item}
+                    onPress={item.onPress ? item.onPress : null}
+                  >
+                    <Icon
+                      containerStyle={styles.iconItem}
+                      name={item.IC_NAME}
+                      size={20}
+                      color={'black'}
+                      type={'light'}
+                    />
+                    <View style={{ flex: 1 }}>
+                      <Text style={styles.text_info}>{item.info}</Text>
+                    </View>
+                  </TouchableOpacity>
+                );
+              })}
+            </View>
+          </View>*/}
+        </View>
+      </Drawer>
+    );
+  }
+}
+const mapStateToProps = state => {
+  return {
+    sideMenu: state.sideMenu
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  null
+)(CookieScreen);

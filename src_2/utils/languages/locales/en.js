@@ -28,7 +28,7 @@ export default {
   PRIVATE_POLICY: 'Privacy Policy',
   COOKIE_POLICY: 'Cookie Policy',
   ABOUT_US: 'About Us',
-  TERM_OF_USE: 'Term of Use',
+  TERM_OF_USE: 'Terms of Use',
   CONTACT_US: 'Contact us',
   SEARCH: 'Search',
   GALLERY: 'Gallery',

@@ -1,9 +1,4 @@
-/**
-** Name:
-** Author:
-** CreateAt:
-** Description:
-**/
+
 /* LIBRARY */
 import React from 'react';
 import { connect } from 'react-redux';

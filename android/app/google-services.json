@@ -1,41 +1,42 @@
 {
   "project_info": {
-    "project_number": "273623369521",
-    "firebase_url": "https://zapes-d03d1.firebaseio.com",
-    "project_id": "zapes-d03d1",
-    "storage_bucket": "zapes-d03d1.appspot.com"
+    "project_number": "88297451036",
+    "firebase_url": "https://dgn-id.firebaseio.com",
+    "project_id": "dgn-id",
+    "storage_bucket": "dgn-id.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:273623369521:android:8164d0b3a9bfbf8cbad210",
+        "mobilesdk_app_id": "1:88297451036:android:795e8d9d4bf1d8349c79d9",
         "android_client_info": {
           "package_name": "com.technation.dgn"
         }
       },
       "oauth_client": [
         {
-          "client_id": "273623369521-3s3sk1kclbm6sesagl8ubkgotru54e12.apps.googleusercontent.com",
+          "client_id": "88297451036-s55gme36d2ptsrd28pn68r9dji9mo9qs.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCZkOSAMNFET9Zyy6UPbcEjbRDy1bVhWoE"
+          "current_key": "AIzaSyDjpxcc6TQCpPJ0VM1ft28lTnDPQBlG_c8"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "273623369521-3s3sk1kclbm6sesagl8ubkgotru54e12.apps.googleusercontent.com",
+              "client_id": "88297451036-s55gme36d2ptsrd28pn68r9dji9mo9qs.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "273623369521-njkj8ococadin3neov236e271a70mtvn.apps.googleusercontent.com",
+              "client_id": "88297451036-ob1po2aq8mtrbhg3f39r860qpa2mn5k8.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.technation.dgn"
+                "bundle_id": "com.technation.dgn",
+                "app_store_id": "1523338274"
               }
             }
           ]

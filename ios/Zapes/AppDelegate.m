@@ -16,11 +16,16 @@
 #import "RNSplashScreen.h"
 #import <UserNotifications/UserNotifications.h>
 
+@import Firebase;
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-  [FIRApp configure];
+  if ([FIRApp defaultApp] == nil) {
+    [FIRApp configure];
+  }
+//  [FIRApp configure];
   [RNFirebaseNotifications configure];
   if ([UNUserNotificationCenter class] != nil) {
       // iOS 10 or later

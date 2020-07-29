@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* ZapesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* ZapesTests.m */; };
 		01C51639412242779148340E /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 39E975AA7C12414DB1F058A4 /* Octicons.ttf */; };
-		04A3D37324C51BCD0066BB9A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04A3D37224C51BCD0066BB9A /* GoogleService-Info.plist */; };
+		049B4B0724D179E200B314E8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 049B4B0624D179E200B314E8 /* GoogleService-Info.plist */; };
 		04C3A764241B417F00722E27 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 042FB5FB24066B83007BFFF6 /* UserNotifications.framework */; };
 		066D22A4E2C54FC48A08B875 /* RobotoSlab-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 66DD9D88E22F4B149533B189 /* RobotoSlab-Thin.ttf */; };
 		0827B4223D674FC9B83C24F6 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D7DAD714A53C4331A58CDD5D /* Roboto-Light.ttf */; };
@@ -83,7 +83,7 @@
 		00E356F21AD99517003FC87E /* ZapesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZapesTests.m; sourceTree = "<group>"; };
 		020E9217E4A04531A64D9C4D /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/native-base/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
 		042FB5FB24066B83007BFFF6 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
-		04A3D37224C51BCD0066BB9A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		049B4B0624D179E200B314E8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		07A5044973E84BA980EF378F /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/native-base/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		085681A162CF4906B61AD243 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/native-base/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		0A5B25B5B3AD47378A447A89 /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-BlackItalic.ttf"; path = "../assets/fonts/Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
@@ -201,7 +201,7 @@
 		13B07FAE1A68108700A75B9A /* Zapes */ = {
 			isa = PBXGroup;
 			children = (
-				04A3D37224C51BCD0066BB9A /* GoogleService-Info.plist */,
+				049B4B0624D179E200B314E8 /* GoogleService-Info.plist */,
 				3DD84CC023711128006C57F5 /* Zapes.entitlements */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -473,7 +473,7 @@
 				E6901CA784D64FEB85E0763A /* Roboto-LightItalic.ttf in Resources */,
 				6610BE6BF1374229BFAFB279 /* Roboto-Medium.ttf in Resources */,
 				BA277B188E984C06BE029878 /* Roboto-MediumItalic.ttf in Resources */,
-				04A3D37324C51BCD0066BB9A /* GoogleService-Info.plist in Resources */,
+				049B4B0724D179E200B314E8 /* GoogleService-Info.plist in Resources */,
 				8D87BBB458C34501A649192E /* Roboto-Regular.ttf in Resources */,
 				12B004FB6798433E98F92902 /* Roboto-Thin.ttf in Resources */,
 				1DE2C4D3BC2D41F2BC34A680 /* Roboto-ThinItalic.ttf in Resources */,

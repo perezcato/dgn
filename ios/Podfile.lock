@@ -17,6 +17,8 @@ PODS:
   - Firebase/AdMob (6.3.0):
     - Firebase/CoreOnly
     - Google-Mobile-Ads-SDK (~> 7.44)
+  - Firebase/Analytics (6.3.0):
+    - Firebase/Core
   - Firebase/Core (6.3.0):
     - Firebase/CoreOnly
     - FirebaseAnalytics (= 6.0.2)
@@ -347,6 +349,7 @@ DEPENDENCIES:
   - FBLazyVector (from `../node_modules/react-native/Libraries/FBLazyVector`)
   - FBReactNativeSpec (from `../node_modules/react-native/Libraries/FBReactNativeSpec`)
   - Firebase/AdMob (~> 6.3.0)
+  - Firebase/Analytics
   - Firebase/Core (~> 6.3.0)
   - Firebase/Messaging (~> 6.3.0)
   - Folly (from `../node_modules/react-native/third-party-podspecs/Folly.podspec`)
@@ -563,6 +566,6 @@ SPEC CHECKSUMS:
   RNSVG: 8ba35cbeb385a52fd960fd28db9d7d18b4c2974f
   Yoga: f2a7cd4280bfe2cca5a7aed98ba0eb3d1310f18b
 
-PODFILE CHECKSUM: 9f703397823a9593a85c0233cce9c4d82dd26e2b
+PODFILE CHECKSUM: 5cbf02cd20c83cfd0452bfb4955a4824e0662afe
 
 COCOAPODS: 1.8.4

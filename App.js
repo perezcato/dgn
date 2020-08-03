@@ -5,10 +5,10 @@
  */
 /** LIBRARY */
 if (__DEV__) {
-  import('./ReactotronConfig').then(() => console.log('Reactotron Configured'))
+  import("./ReactotronConfig").then(() => console.log("Reactotron Configured"));
 }
 
-import 'rxjs';
+import "rxjs";
 import 'react-native-gesture-handler';
 import * as React from 'react';
 import { View, StatusBar, Platform } from 'react-native';
@@ -24,23 +24,62 @@ import { commonStyles } from '~/utils/styles';
 import RootNavigator from '~/navigator/RootNavigator';
 import CConnection from '~/components/CConnection';
 
-import  PushNotification  from 'react-native-push-notification';
+import PushNotification from 'react-native-push-notification';
+import PushNotificationIOS from '@react-native-community/push-notification-ios';
+import firebase from 'react-native-firebase';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     configureFontAwesomePro('light');
 
+    const messaging = firebase.messaging();
+
+    messaging
+      .hasPermission()
+      .then(enabled => {
+        if (enabled) {
+          messaging
+            .getToken()
+            .then(token => {
+              console.log(token);
+            })
+            .catch(error => {
+              /* handle error */
+            });
+        } else {
+          messaging
+            .requestPermission()
+            .then(() => {
+              /* got permission */
+            })
+            .catch(error => {
+              /* handle error */
+            });
+        }
+      })
+      .catch(error => {
+        /* handle error */
+      });
+
+    firebase.notifications().onNotification(notification => {
+      const { title, body } = notification;
+      PushNotification.localNotification({
+        title: title,
+        message: body, // (required)
+      });
+    });
+
     /*push Notifications*/
     PushNotification.configure({
-      onRegister: function (token) {
+      onRegister: function(token) {
         console.log("TOKEN:", token);
       },
-      onNotification: function (notification) {
+      onNotification: function(notification) {
         console.log("NOTIFICATION:", notification);
-        notification.finish(PushNotificationIOS.FetchResult.NoData);
+        // notification.finish(PushNotificationIOS.FetchResult.NoData);
       },
-      onAction: function (notification) {
+      onAction: function(notification) {
         console.log("ACTION:", notification.action);
         console.log("NOTIFICATION:", notification);
       },
@@ -57,13 +96,26 @@ class App extends React.Component {
       requestPermissions: true,
     });
   }
+
+  /*componentDidMount(): void {
+    PushNotificationIOS.presentLocalNotification({
+      alertBody: "The message displayed in the notification alert",
+      alertTitle: "The message displayed in the notification alert",
+      alertAction: "view",
+    });
+  }*/
+
   /** RENDER */
   render() {
     return (
       <NavigationContainer>
         <Provider store={store}>
           <View style={commonStyles.container}>
-            <StatusBar barStyle={'dark-content'} backgroundColor={'#940a0a'} translucent={false} />
+            <StatusBar
+              barStyle={'dark-content'}
+              backgroundColor={'#940a0a'}
+              translucent={false}
+            />
             <RootNavigator />
             <CConnection />
           </View>

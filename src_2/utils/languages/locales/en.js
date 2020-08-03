@@ -27,7 +27,7 @@ export default {
   CATEGORIES: 'Categories',
   PRIVATE_POLICY: 'Privacy Policy',
   COOKIE_POLICY: 'Cookie Policy',
-  ABOUT_US: 'About Us',
+  ABOUT_US: 'About Daily Guide Network',
   TERM_OF_USE: 'Terms of Use',
   CONTACT_US: 'Contact us',
   SEARCH: 'Search',

@@ -157,7 +157,7 @@ class CDrawer extends React.Component {
           <Text
             style={[sideMenuStyle.navItemFooter, { color: Colors.cloBody }]}
           >
-            All right Reserved
+            All Right Reserved.
           </Text>
         </View>
         {this._logoPosition == 1 ? (

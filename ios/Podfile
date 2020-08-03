@@ -57,6 +57,8 @@ target 'Zapes' do
 
   pod 'react-native-onesignal', :path => '../node_modules/react-native-onesignal'
 
+  pod 'RNCPushNotificationIOS', :path => '../node_modules/@react-native-community/push-notification-ios'
+
   target 'ZapesTests' do
     inherit! :search_paths
     # Pods for testing
